@@ -11,30 +11,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
 </head> 
-<body class="bg-pgrey font-garet">
+<body class="bg-pgrey font-grotesk w-screen h-screen">
     <!-- Header -->
-    <header class="flex bg-white shadow-md h-24 items-center">
-        <div class="w-5/6 mx-auto flex justify-between items-center p-4">
-            <a href="#" class="flex flex-row text-3xl font-bold text-pblack font-grotesk items-center"><img class="rounded-full w-12 h-12 mx-3" src="./img/branding/logo.png">InTheirShoes</a>
-            <nav class="flex space-x-4 font-semibold text-xl">
-                <a href="#about" class="text-pblack hover:text-pred">About</a>
-                <a href="#features" class="text-pblack hover:text-pred">Features</a>
-                <a href="#support" class="text-pblack hover:text-pred">Support</a>
-                <a href="#campaigns" class="text-pblack hover:text-pred">Campaigns</a>
-            </nav>
-            <div class="flex space-x-4 font-bold items-center">
-                <button class="bg-pgreen text-gray-900 px-4 py-2 rounded-3xl border-2 border-pblack hover:bg-pblue">Get Started</button>
-                <button class="bg-pred text-gray-900 px-4 py-2 rounded-3xl border-2 border-pblack hover:bg-pgreen">Donate</button>
+    <header>
+        <!-- Top Navbar -->
+        <div class="flex bg-pgray h-14 items-center font-grotesk">
+            <div class="w-11/12 mx-auto flex justify-between items-center text-xl p-2">
+                <div>
+                    <a href="#accessibility" class="text-pblack hover:text-pred font-semibold">Accessibility</a>
+                </div>
+                <div>
+                    <a href="#contact" class="text-pblack hover:text-pred font-semibold">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navbar -->
+        <div class="flex bg-white shadow-md h-24 items-center">
+            <div class="w-11/12 mx-auto flex justify-between items-center">
+                <a href="#" class="flex flex-row text-3xl font-bold text-pblack font-grotesk items-center">
+                    <img class="rounded-full w-12 h-12" src="./img/branding/logo.png" alt="Logo">InTheirShoes
+                </a>
+                <nav class="flex space-x-4 font-semibold text-xl">
+                    <a href="#about" class="text-pblack hover:text-pred">About</a>
+                    <a href="#features" class="text-pblack hover:text-pred">Features</a>
+                    <a href="#support" class="text-pblack hover:text-pred">Support</a>
+                    <a href="#campaigns" class="text-pblack hover:text-pred">Campaigns</a>
+                </nav>
+                <div class="flex space-x-4 font-bold items-center">
+                    <button class="bg-pgreen text-gray-900 px-4 py-2 rounded-3xl border-2 border-pblack hover:bg-pblue">Get Started</button>
+                    <button class="bg-pred text-gray-900 px-4 py-2 rounded-3xl border-2 border-pblack hover:bg-pblue">Donate</button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-pblue text-pblack">
-        <div class="max-w-7xl mx-auto px-8 py-48 text-center">
-            <h1 class="text-4xl font-bold mb-4 font-grotesk">Our Manifesto for a More Inclusive World</h1>
-            <p class="mb-6 font-garet">Experience life from the perspective of people with disabilities and discover new empathy and understanding.</p>
-            <button class="bg-pgreen text-pblack px-6 py-2 rounded hover:bg-pred">Read Our Manifesto</button>
+    <section class="relative bg-[url('img/bg/manifestobg.jpg')] h-2/3 bg-center bg-no-repeat bg-cover text-white">
+        <div class="flex px-12 py-20 justify-start align-end">
+            <div class="bg-yellow-400 p-6 rounded-3xl shadow-lg max-w-xl">
+                <h1 class="text-4xl font-bold mb-4 text-black font-grotesk">Our Manifesto for an Equal Future</h1>
+                <p class="mb-6 text-md text-black font-garet">Experience life from the perspective of people with disabilities and discover new empathy and understanding.</p>
+                <button class="bg-pgreen text-black px-6 py-3 rounded-lg shadow-md hover:bg-pred font-bold">Read Our Manifesto</button>
+            </div>
         </div>
     </section>
 
@@ -62,45 +81,56 @@
 
     <section id="disabilities-info" class="">
         <div class="max-w-full mx-auto">
-            <!-- Row 1: Wheelchair -->
-            <div class="flex flex-col md:flex-row items-center bg-purple-300 text-white py-8 px-6 md:px-12">
+            <!-- Row 1: Wheelchair Disability -->
+            <div class="flex flex-col md:flex-row items-center bg-pred text-pgray py-8 px-6 md:px-12">
                 <div class="flex-1 text-center md:text-left">
-                    <h3 class="text-2xl font-bold mb-2 font-grotesk">Creativity</h3>
-                    <p class="text-base font-garet mb-4">Discover artistic and musical talents that inspire and unite people of all abilities.</p>
-                    <button class="bg-white text-purple-600 px-4 py-2 rounded font-bold hover:bg-gray-200">Read More</button>
+                    <h3 class="text-2xl font-bold mb-2 font-grotesk">Wheelchair Accessibility</h3>
+                    <p class="text-base font-garet mb-4">Explore innovations that enhance mobility and independence for wheelchair users.</p>
+                    <button class="bg-white text-red-600 px-4 py-2 rounded font-bold hover:bg-gray-200">Learn More</button>
                 </div>
                 <div class="flex-1 text-center">
-                    <img src="./img/characters/wheelchairgirl.png" alt="Wheelchair Bound Girl" class="rounded w-64 h-64">
+                    <img src="./img/characters/wheelchairgirl.png" alt="Wheelchair User" class="rounded w-64 h-64">
                 </div>
             </div>
-            <!-- Row 2: Auditory Impairment -->
-            <div class="flex flex-col md:flex-row items-center bg-blue-300 text-white py-8 px-6 md:px-12">
+            <!-- Row 2: Audio Impairment -->
+            <div class="flex flex-col md:flex-row items-center bg-pblue text-pgray py-8 px-6 md:px-12">
                 <div class="flex-1 text-center md:text-left">
-                    <h3 class="text-2xl font-bold mb-2 font-grotesk">Sport</h3>
-                    <p class="text-base font-garet mb-4">Experience the thrill of adaptive sports and the resilience of the human spirit.</p>
-                    <button class="bg-white text-blue-600 px-4 py-2 rounded font-bold hover:bg-gray-200">Read More</button>
+                    <h3 class="text-2xl font-bold mb-2 font-grotesk">Audio Impairment</h3>
+                    <p class="text-base font-garet mb-4">Discover technology and techniques that improve communication for those with hearing loss.</p>
+                    <button class="bg-white text-blue-600 px-4 py-2 rounded font-bold hover:bg-gray-200">Learn More</button>
                 </div>
                 <div class="flex-1 text-center">
-                    <img src="./img/characters/deafgirl.png" alt="Auditory Impairment Girl" class="rounded w-64 h-64">
+                    <img src="./img/characters/deafgirl.png" alt="Audio Impairment Support" class="rounded w-64 h-64">
                 </div>
             </div>
             <!-- Row 3: Visual Impairment -->
-            <div class="flex flex-col md:flex-row items-center bg-green-300 text-white py-8 px-6 md:px-12">
+            <div class="flex flex-col md:flex-row items-center justify-between bg-pgreen text-pgray py-8 px-6 md:px-12">
                 <div class="flex-1 text-center md:text-left">
-                    <h3 class="text-2xl font-bold mb-2 font-grotesk">Relations</h3>
-                    <p class="text-base font-garet mb-4">Learn about building meaningful relationships and breaking barriers.</p>
-                    <button class="bg-white text-green-600 px-4 py-2 rounded font-bold hover:bg-gray-200">Read More</button>
+                    <h3 class="text-2xl font-bold mb-2 font-grotesk">Visual Impairment</h3>
+                    <p class="text-base font-garet mb-4">Learn about assistive tools and resources that empower individuals with vision loss.</p>
+                    <button class="bg-white text-green-600 px-4 py-2 rounded font-bold hover:bg-gray-200">Learn More</button>
                 </div>
                 <div class="flex-1 text-center">
-                    <img src="./img/characters/blindman.png" alt="Visual Impairment Man" class="rounded w-64 h-64">
+                    <img src="./img/characters/blindman.png" alt="Visual Impairment Support" class="rounded w-64 h-64">
+                </div>
+            </div>
+            <!-- Row 4: Dyslexia -->
+            <div class="flex flex-col md:flex-row items-center justify-between bg-pgray text-pgray py-8 px-6 md:px-12">
+                <div class="flex-1 text-center md:text-left">
+                    <h3 class="text-2xl font-bold mb-2 font-grotesk">Dyslexia</h3>
+                    <p class="text-base font-garet mb-4">Learn about how dyslexia affects children and adults alike</p>
+                    <button class="bg-white text-gray-600 px-4 py-2 rounded font-bold hover:bg-gray-200">Learn More</button>
+                </div>
+                <div class="flex-1 text-center">
+                    <img src="./img/characters/dyslexiaboy.png" alt="Dyslexia Support" class="rounded w-64 h-64">
                 </div>
             </div>
         </div>
-    </section>
+    </section>    
     
     <!-- Footer -->
-    <footer class="bg-pblack text-white">
-        <div class="max-w-7xl mx-auto p-6 flex justify-between">
+    <footer class="flex bg-pblack text-white justify-center">
+        <div class="w-11/12 p-6 flex justify-between">
             <p>&copy; 2025 InTheirShoes. All Rights Reserved.</p>
             <div class="space-x-4">
                 <a href="#" class="hover:text-pgreen">Privacy Policy</a>
