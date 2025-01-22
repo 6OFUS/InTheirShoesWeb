@@ -29,7 +29,7 @@ function handleAuthError(error) {
 supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN') {
       console.log('User signed in:', session.user);
-      // Redirect to your app's dashboard or homepage
+
       window.location.href = '/dashboard';
     }
   });  
