@@ -1,4 +1,22 @@
-import { signUp, loginInPW, logInGoogle, resetPassword } from './auth.js';
+import { signUp, loginInPW, logInGoogle, resetPassword, supabase } from './auth.js';
+
+supabase.auth.onAuthStateChange((event, session) => {
+    if (event === 'SIGNED_IN') {
+      console.log('User signed in:', session.user);
+  
+      // Check if we're in prod or test (remove on production)
+      const isProduction = (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1');
+      
+      // Set the correct redirect URL based on environment
+      const redirectUrl = isProduction 
+        ? '/dashboard.html'  // PROD
+        : '/public/dashboard.html';  //TEST
+      
+      // Perform the redirect
+      window.location.href = redirectUrl;
+    }
+  });
+  
 
 // Utility function to show error messages
 function showError(elementId, message) {
@@ -30,10 +48,7 @@ if (loginForm) {
     const password = loginPassword.value.trim();
 
     try {
-      const user = await loginInPW(email, password);
-      if (user) {
-        window.location.href = '/public/dashboard.html';
-      }
+      await loginInPW(email, password);
     } catch (error) {
       showError('login-error', error.message);
     }
@@ -43,12 +58,7 @@ if (loginForm) {
 if (googleLoginButton) {
   googleLoginButton.addEventListener('click', async () => {
     try {
-      const user = await logInGoogle();
-      if (user) {
-        window.location.href = '/public/dashboard.html';
-      } else {
-        showError('login-error', 'Google sign-in failed. Please try again.');
-      }
+      await logInGoogle();
     } catch (error) {
       showError('login-error', error.message);
     }
@@ -58,12 +68,7 @@ if (googleLoginButton) {
 if (googleSignupButton) {
     googleSignupButton.addEventListener('click', async () => {
       try {
-        const user = await logInGoogle();
-        if (user) {
-          window.location.href = '/public/dashboard.html';
-        } else {
-          showError('signup-error', 'Google sign-up failed. Please try again.');
-        }
+        await logInGoogle();
       } catch (error) {
         showError('signup-error', error.message);
       }
@@ -92,10 +97,7 @@ if (signUpForm) {
     }
 
     try {
-      const user = await signUp(email, password);
-      if (user) {
-        window.location.href = '/public/dashboard.html';
-    }
+      await signUp(email, password);
     } catch (error) {
       showError('signup-error', error.message);
     }
@@ -117,7 +119,9 @@ if (resetPasswordForm) {
     try {
       await resetPassword(email);
       alert('Password reset email sent successfully.');
-      window.location.href = '/login';
+      signupSection.classList.add('hidden');
+        resetSection.classList.add('hidden');
+        loginSection.classList.remove('hidden');
     } catch (error) {
       showError('reset-password-error', error.message);
     }
@@ -169,7 +173,6 @@ if (cancelResetLink) {
   });
 }
 
-// Hide errors initially
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.error-message').forEach((error) => {
     error.classList.add('hidden');

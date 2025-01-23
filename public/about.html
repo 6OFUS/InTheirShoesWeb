@@ -96,42 +96,310 @@
             </div>
         </div>
     </section>
+
     <section class="py-16 bg-white">
-        <div class="container mx-autof text-center">
+        <div class="container mx-auto text-center">
             <div class="grid grid-cols-5 gap-6 px-6">
                 <!-- Leader -->
-                <div class="bg-blue-100 px-6 py-10 rounded-lg shadow-md">
+                <div onclick="openModal('leader-modal')" class="bg-blue-100 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
                     <img src="img/characters/al.png" alt="Leader" class="mx-auto mb-4 rounded-full">
                     <h3 class="text-xl font-bold text-emerald-900">Alfred Kang Jing Rui</h3>
                     <p class="text-gray-700">Leader, Lead Developer</p>
                 </div>
                 <!-- Art Director -->
-                <div class="bg-blue-50 px-6 py-10 rounded-lg shadow-md">
+                <div onclick="openModal('art-director-modal')" class="bg-blue-50 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
                     <img src="img/characters/hh.png" alt="Art Director" class="mx-auto mb-4 rounded-full">
                     <h3 class="text-xl font-bold text-emerald-900">Looi Hui Hui</h3>
                     <p class="text-gray-700">Art Director</p>
                 </div>
                 <!-- Lead 3D Designer -->
-                <div class="bg-blue-100 px-6 py-10 rounded-lg shadow-md">
+                <div onclick="openModal('designer-modal')" class="bg-blue-100 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
                     <img src="img/characters/mal.png" alt="Lead 3D Designer" class="mx-auto mb-4 rounded-full">
-                    <h3 class="text-xl font-bold text-emerald-900">Malcolm Goh Beng Hong</h3>
+                    <h3 class="text-xl font-bold text-emerald-900">Malcom Goh Beng Hong</h3>
                     <p class="text-gray-700">Lead 3D Designer</p>
                 </div>
                 <!-- 3D Designer -->
-                <div class="bg-blue-50 px-6 py-10 rounded-lg shadow-md">
+                <div onclick="openModal('3d-designer-modal')" class="bg-blue-50 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
                     <img src="img/characters/jen.png" alt="3D Designer" class="mx-auto mb-4 rounded-full">
                     <h3 class="text-xl font-bold text-emerald-900">Lau Mei Ying Jennifer</h3>
                     <p class="text-gray-700">3D Designer</p>
                 </div>
                 <!-- Game Developer -->
-                <div class="bg-blue-100 px-6 py-10 rounded-lg shadow-md">
+                <div onclick="openModal('developer-modal')" class="bg-blue-100 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
                     <img src="img/characters/ke.png" alt="Game Developer" class="mx-auto mb-4 rounded-full">
                     <h3 class="text-xl font-bold text-emerald-900">Kevin Heng Wei Jian</h3>
                     <p class="text-gray-700">Game Developer</p>
                 </div>
             </div>
         </div>
-    </section>  
+
+        <!-- Modals -->
+        <div id="leader-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
+            <div class="bg-white rounded-lg p-6 w-1/4 h-2/3 flex flex-col justify-between bg-gradient-to-b from-blue-300 via-white to-white">
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('leader-modal')" class="self-end text-pblack text-4xl font-bold">&times;</button>
+        
+                <!-- Avatar -->
+                <div class="flex flex-col items-center">
+                    <img src="img/avatars/alfred.png" alt="Alfred Kang Jing Rui" class="rounded-xl w-56 h-56 mb-8">
+                </div>
+        
+                <!-- Details -->
+                <div>
+                    <h3 class="text-2xl mx-6 font-bold text-pblack">Alfred Kang Jing Rui</h3>
+                    <p class="text-xl mx-6 text-gray-700">Leader, Lead Developer</p>
+                </div>
+        
+                <!-- Contact Links -->
+                <div class="grid grid-cols-[auto,1fr] mx-6 gap-x-4 gap-y-3 mt-6 text-md text-gray-700">
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://alfredkang.com" class="underline font-bold text-pblack">
+                            https://alfredkang.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="flex items-center underline">
+                        <a href="mailto:alfredkangjr@gmail.com">
+                            alfredkangjr@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-brands fa-linkedin"></i>
+                    </div>
+                    <div class="flex items-center underline">
+                        <a href="https://www.linkedin.com/in/alfredkangjr/">
+                            https://www.linkedin.com/in/alfredkangjr/
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-brands fa-github"></i>
+                    </div>
+                    <div class="flex items-center underline">
+                        <a href="https://github.com/alfrdkang">
+                            https://github.com/alfrdkang
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('leader-modal')" class="mt-6 w-full px-4 py-2 bg-blue-500 text-white rounded-lg">Close</button>
+            </div>
+        </div>      
+
+        <div id="art-director-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
+            <div class="bg-white rounded-lg p-6 w-1/4 h-2/3 flex flex-col justify-between bg-gradient-to-b from-purple-300 via-white to-white">
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('art-director-modal')" class="self-end text-pblack text-4xl font-bold">&times;</button>
+        
+                <!-- Avatar -->
+                <div class="flex flex-col items-center">
+                    <img src="img/avatars/huihui.jpg" alt="Looi Hui Hui" class="rounded-xl w-56 h-56 mb-8">
+                </div>
+        
+                <!-- Details -->
+                <div>
+                    <h3 class="text-2xl mx-6 font-bold text-pblack">Looi Hui Hui</h3>
+                    <p class="text-xl mx-6 text-gray-700">Art Director</p>
+                </div>
+        
+                <!-- Contact Links -->
+                <div class="grid grid-cols-[auto,1fr] mx-6 gap-x-4 gap-y-3 mt-6 text-md text-gray-700">
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://huihuiportfolio12.wordpress.com" class="underline font-bold text-pblack">
+                            https://huihuiportfolio12.wordpress.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="mailto:looihuihui12@gmail.com" class="underline">
+                            looihuihui12@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-4xl fa-brands fa-linkedin"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://www.linkedin.com/in/looi-hui-hui-60baa020a/" class="underline">
+                            https://www.linkedin.com/in/looi-hui-hui-60baa020a/
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('art-director-modal')" class="mt-6 w-full px-4 py-2 bg-purple-500 text-white rounded-lg">Close</button>
+            </div>
+        </div>             
+
+        <div id="designer-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
+            <div class="bg-white rounded-lg p-6 w-1/4 h-2/3 flex flex-col justify-between bg-gradient-to-b from-pgreen via-white to-white">
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('designer-modal')" class="self-end text-pblack text-4xl font-bold">&times;</button>
+        
+                <!-- Avatar -->
+                <div class="flex flex-col items-center">
+                    <img src="img/characters/mal.png" alt="Malcom Goh Beng Hong" class="rounded-xl w-56 h-56 mb-8">
+                </div>
+        
+                <!-- Details -->
+                <div>
+                    <h3 class="text-2xl mx-6 font-bold text-pblack">Malcom Goh Beng Hong</h3>
+                    <p class="text-xl mx-6 text-gray-700">Lead 3D Designer</p>
+                </div>
+        
+                <!-- Contact Links -->
+                <div class="grid grid-cols-[auto,1fr] mx-6 gap-x-4 gap-y-3 mt-6 text-md text-gray-700">
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="" class="underline font-bold text-pblack">
+                            https://malcomgoh.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="mailto:malcomboat@gmail.com" class="underline">
+                            malcomboat@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-4xl fa-brands fa-linkedin"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://www.linkedin.com/in/malcom-goh-10a337195/" class="underline">
+                            https://www.linkedin.com/in/malcom-goh-10a337195/
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('designer-modal')" class="mt-6 w-full px-4 py-2 bg-emerald-500 text-white rounded-lg">Close</button>
+            </div>
+        </div>    
+
+        <div id="3d-designer-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
+            <div class="rounded-lg p-6 w-1/4 h-2/3 flex flex-col justify-between bg-gradient-to-b from-pred via-white to-white">
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('3d-designer-modal')" class="self-end text-pblack text-4xl font-bold">&times;</button>
+        
+                <!-- Avatar -->
+                <div class="flex flex-col items-center">
+                    <img src="img/avatars/jennifer.jpg" alt="Jennifer Lau Mei Ying" class="rounded-xl w-56 h-56 mb-8">
+                </div>
+        
+                <!-- Details -->
+                <div>
+                    <h3 class="text-2xl mx-6 font-bold text-pblack">Jennifer Lau Mei Ying</h3>
+                    <p class="text-xl mx-6 text-gray-700">3D Designer</p>
+                </div>
+        
+                <!-- Contact Links -->
+                <div class="grid grid-cols-[auto,1fr] mx-6 gap-x-4 gap-y-3 mt-6 text-md text-gray-700">
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://jennsresume.wordpress.com/" class="underline font-bold text-pblack">
+                            https://jennsresume.wordpress.com/
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="mailto:jenniferlaumeiying@gmail.com" class="underline">
+                            jenniferlaumeiying@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-brands fa-linkedin"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://www.linkedin.com/in/jennifer-lau-349033203/" class="underline">
+                            https://www.linkedin.com/in/jennifer-lau-349033203/
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-brands fa-square-instagram"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://www.instagram.com/ennjenn.j/" class="underline">
+                            @ennjenn.j
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('3d-designer-modal')" class="mt-6 w-full px-4 py-2 bg-pred text-white rounded-lg">Close</button>
+            </div>
+        </div>        
+
+        <div id="developer-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
+            <div class="bg-white rounded-lg p-6 w-1/4 h-2/3 flex flex-col justify-between bg-gradient-to-b from-yellow-200 via-white to-white">
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('developer-modal')" class="self-end text-pblack text-4xl font-bold">&times;</button>
+        
+                <!-- Avatar -->
+                <div class="flex flex-col items-center">
+                    <img src="img/characters/ke.png" alt="Kevin Heng Wei Jian" class="rounded-xl w-56 h-56 mb-8">
+                </div>
+        
+                <!-- Details -->
+                <div>
+                    <h3 class="text-2xl mx-6 font-bold text-pblack">Kevin Heng Wei Jian</h3>
+                    <p class="text-xl mx-6 text-gray-700">Game Developer</p>
+                </div>
+        
+                <!-- Contact Links -->
+                <div class="grid grid-cols-[auto,1fr] mx-6 gap-x-4 gap-y-3 mt-6 text-md text-gray-700">
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="" class="underline font-bold text-pblack">
+                            https://kevinheng.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-3xl fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="mailto:kwjheng@gmail.com" class="underline">
+                            kwjheng@gmail.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="text-4xl fa-brands fa-linkedin"></i>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="https://www.linkedin.com/in/kwjheng/" class="underline">
+                            https://www.linkedin.com/in/kwjheng/
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Close Button -->
+                <button onclick="closeModal('developer-modal')" class="mt-6 w-full px-4 py-2 bg-yellow-400 text-white rounded-lg">Close</button>
+            </div>
+        </div>    
+    </section>
     
     <!-- Footer -->
     <footer class="flex w-full bg-yellow-500 text-black justify-center font-bold text-xl">
@@ -143,7 +411,15 @@
             </div>
         </div>
     </footer>
-    <script type="module" src="js/landing.js"></script>
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+    
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
     <script src="tailwind.config.js"></script>

@@ -3,7 +3,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 import { firebaseConfig, supabaseUrl, supabaseKey } from './config.js';
 
 const app = initializeApp(firebaseConfig);
-const supabase = createClient(supabaseUrl, supabaseKey);
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Input Validation
 function isValidEmail(email) {
@@ -24,15 +24,6 @@ function handleAuthError(error) {
     throw new Error(`Authentication failed: ${error.message}`);
   }
 }
-
-// Redirect
-supabase.auth.onAuthStateChange((event, session) => {
-    if (event === 'SIGNED_IN') {
-      console.log('User signed in:', session.user);
-
-      window.location.href = '/dashboard';
-    }
-  });  
 
 // Sign Up
 export async function signUp(email, password) {
@@ -61,14 +52,17 @@ export async function loginInPW(email, password) {
 export async function logInGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/public/dashboard.html`,
+      },
     });
-  
+    
     if (error) {
       console.error('Error signing in with Google:', error.message);
       throw new Error(`Google sign-in failed: ${error.message}`);
     }
   
-    return data;  // Returns the authentication data
+    return data;
   }
 
 // Log In With Email Link
