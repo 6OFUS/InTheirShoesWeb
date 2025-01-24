@@ -31,12 +31,27 @@ export async function signUp(email, password) {
     throw new Error("Invalid email format.");
   }
   if (!isValidPassword(password)) {
-    throw new Error("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
+    throw new Error(
+      "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character."
+    );
   }
+
   const { data, error } = await supabase.auth.signUp({ email, password });
-  handleAuthError(error);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  const user = data.user;
+  if (user) {
+    window.location.href = "/public/dashboard.html"; // change in prod
+  } else {
+    throw new Error("Signup failed. Please try again.");
+  }
+
   return data;
 }
+
 
 // Log In With Password
 export async function loginInPW(email, password) {
@@ -53,7 +68,7 @@ export async function logInGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/public/dashboard.html`,
+        redirectTo: `${window.location.origin}/public/dashboard.html`, // change in prod
       },
     });
     
