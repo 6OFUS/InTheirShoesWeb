@@ -3,6 +3,7 @@ tailwind.config = {
       fontFamily: {
         'grotesk': ['Hanken Grotesk', 'sans-serif'],
         'garet': ['Garet', 'sans-serif'],
+        'dyslexic': ['OpenDyslexic', 'sans-serif'],
       },
       extend: {
         colors: {
