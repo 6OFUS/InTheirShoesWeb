@@ -33,7 +33,7 @@
         </div>
     </div>
 
-<img src="img/bg/5FUS_BANNER_320x320.png" 
+    <img src="img/bg/5FUS_BANNER_320x320.png" 
     srcset="
         img/bg/5FUS_BANNER_320x320.png 320w,
         img/bg/5FUS_BANNER_768x320.png 768w,
@@ -42,8 +42,11 @@
     alt="Manifesto Banner"
     class="w-full h-auto object-cover mx-auto">
 
+    <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
+        <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/manifesto.html" class="text-black hover:text-apink">Manifesto</a>
+    </div>
 
-    <section class="flex py-16 bg-white w-11/12 justify-center items-center">
+    <section class="flex py-12 bg-white w-11/12 justify-center items-center">
         <div class="container mx-auto text-start px-24">
             <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Introduction</h2>
             <hr class="my-5 border-1 border-black w-1/5">
@@ -54,7 +57,7 @@
         <img src="img/branding/logo3.png" alt="5OFUS Banner" class="h-80 mx-8 mb-4 rounded-full">
     </section>
 
-    <section class="flex py-16 bg-white w-11/12 justify-center items-center">
+    <section class="flex py-12 bg-white w-11/12 justify-center items-center">
         <img src="img/branding/logo2.png" alt="5OFUS Banner" class="h-80 mx-8 mb-4 rounded-full">
         <div class="container mx-auto text-start px-24">
             <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Purpose</h2>
@@ -66,7 +69,7 @@
     </section>
 
     <section class="bg-egg-yellow p-20 rounded-2xl w-11/12 mx-auto mt-10 shadow-lg flex justify-center items-center flex-col">
-        <h1 class="text-3xl font-garet font-bold text-center">About The Game</h1>
+        <h1 class="text-3xl font-garet font-bold text-start">About The Game</h1>
         <hr class="my-5 border-1 border-black w-1/5">
         <div class="mt-5 flex flex-col md:flex-row gap-6">
             <div>
@@ -85,48 +88,88 @@
         </div>
     </section>
     
-    <section class="max-w-5xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-gray-300 p-6 rounded-lg shadow-md text-center">
-            <h3 class="font-bold">Visual Impairment Simulation</h3>
-            <p>The player takes on the role of an adult with limited vision...</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-8 mt-96">
+        <!-- Visual Impairment Simulation -->
+        <div class="relative flex flex-col items-center bg-gray-300 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16">
+            <img src="img/characters/blindman.png" alt="Blind Man" class="absolute top-[-50%] w-54">
+            <h3 class="font-garet font-bold text-lg mt-8">Visual Impairment Simulation</h3>
+            <hr class="self-start w-8 border-t-2 border-black my-8">
+            <p class="text-sm text-start">
+                The player takes on the role of an adult with limited vision, experiencing a narrow field of view where traffic lights blur together. Surrounding sounds like car horns and engine noise are amplified, creating an overwhelming sensory environment.
+            </p>
         </div>
-        <div class="bg-pblue p-6 rounded-lg shadow-md text-center">
-            <h3 class="font-bold">Hearing Impairment Simulation</h3>
-            <p>The player assumes the role of a young adult with hearing impairment...</p>
+    
+        <!-- Hearing Impairment Simulation -->
+        <div class="relative flex flex-col items-center bg-blue-300 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16">
+            <img src="img/characters/deafgirl.png" alt="Deaf Girl" class="absolute top-[-50%] w-54">
+            <h3 class="font-garet font-bold text-lg mt-8">Hearing Impairment Simulation</h3>
+            <hr class="self-start w-8 border-t-2 border-black my-8">
+            <p class="text-sm text-start">
+                The player assumes the role of a young adult with hearing impairment working at a café. When a customer complains about a missing item, the player relies on visual cues and the environment to solve the issue.
+            </p>
         </div>
-        <div class="bg-egg-yellow p-6 rounded-lg shadow-md text-center">
-            <h3 class="font-bold">Mental Impairment Simulation</h3>
-            <p>The player becomes a child with dyslexia in a classroom...</p>
+    
+        <!-- Mental Impairment Simulation -->
+        <div class="relative flex flex-col items-center bg-yellow-200 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16 mt-64">
+            <img src="img/characters/dyslexiaboy.png" alt="Dyslexia Boy" class="absolute top-[-50%] w-54">
+            <h3 class="font-garet font-bold text-lg mt-8">Mental Impairment Simulation</h3>
+            <hr class="self-start w-8 border-t-2 border-black my-8">
+            <p class="text-sm text-start">
+                The player becomes a child with dyslexia in a classroom. A scrambled sentence appears on the blackboard, and the player must arrange letter blocks to correct it.
+            </p>
         </div>
-        <div class="bg-pcyan p-6 rounded-lg shadow-md text-center">
-            <h3 class="font-bold">Physical Impairment Simulation</h3>
-            <p>The player navigates a steep slope in a wheelchair...</p>
+    
+        <!-- Physical Impairment Simulation -->
+        <div class="relative flex flex-col items-center bg-teal-300 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16 mt-64">
+            <img src="img/characters/wheelchairgirl.png" alt="Wheelchair Girl" class="absolute top-[-50%] w-54">
+            <h3 class="font-garet font-bold text-lg mt-8">Physical Impairment Simulation</h3>
+            <hr class="self-start w-8 border-t-2 border-black my-8">
+            <p class="text-sm text-start">
+                The player, in the role of an elderly person, navigates a steep slope in a wheelchair. They must use hand gestures in VR to push or pull the wheelchair, maintaining momentum to avoid rolling back down.
+            </p>
         </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto mt-10 bg-white p-10 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold text-center">Goals & Objectives</h2>
-        <div class="mt-5">
-            <div class="flex gap-4 items-start">
-                <span class="text-4xl font-bold text-aorange">1</span>
-                <div>
-                    <h3 class="font-bold">Foster Empathy and Understanding Among Youngsters</h3>
-                    <p class="mt-2">Create an immersive environment that allows players to experience the world...</p>
-                    <h4 class="font-semibold mt-2">Solution:</h4>
-                    <p>Through realistic scenarios where players navigate tasks such as...</p>
-                </div>
+    </div>    
+    
+    <div class="rounded-lg shadow-lg w-11/12 bg-gray-200 p-10 w-11/12 m-24">
+        <h1 class="text-center text-2xl font-garet font-bold text-pblack mb-24">Goals & Objectives</h1>
+    
+        <div class="grid grid-cols-4 gap-4 items-start mb-8">
+            <!-- Number 1 -->
+            <div class="col-span-1 flex justify-center">
+                <span class="text-9xl font-bold font-garet text-pcyan">1</span>
             </div>
-            <div class="flex gap-4 items-start mt-6">
-                <span class="text-4xl font-bold text-apink">2</span>
-                <div>
-                    <h3 class="font-bold">Reduce Stigma and Discrimination Through Interactive Learning</h3>
-                    <p class="mt-2">Challenge stereotypes and misconceptions by placing players in situations where...</p>
-                    <h4 class="font-semibold mt-2">Solution:</h4>
-                    <p>Scenarios like interacting with others while dealing with a disability...</p>
-                </div>
+            <div class="col-span-3">
+                <h2 class="text-lg font-bold text-pblack font-garet">Foster Empathy and Understanding Among Youngsters</h2>
+                <p class="mt-2 font-grotesk">
+                    <span class="font-bold">Objective:</span><br>
+                    Create an immersive environment that allows players to experience the world from the perspective of individuals with disabilities. By stepping into their shoes, the game will encourage players to understand and connect with the daily challenges faced by those with disabilities.
+                </p>
+                <p class="mt-3 font-grotesk">
+                    <span class="font-bold">Solution:</span><br>
+                    Through realistic scenarios where players navigate tasks such as navigating through a busy street with a visual impairment or using assistive devices for mobility, players will develop empathy and become more aware of the emotional and physical hurdles that others face.
+                </p>
             </div>
         </div>
-    </section>
+    
+        <div class="grid grid-cols-4 gap-4 items-start">
+            <!-- Number 2 -->
+            <div class="col-span-1 flex justify-center">
+                <span class="text-9xl font-bold font-garet text-pcyan">2</span>
+            </div>
+            <div class="col-span-3">
+                <h2 class="text-lg font-bold text-pblack font-garet">Reduce Stigma and Discrimination Through Interactive Learning</h2>
+                <p class="mt-2 font-grotesk">
+                    <span class="font-bold">Objective:</span><br>
+                    Challenge stereotypes and misconceptions by placing players in situations where they must confront and overcome barriers caused by discrimination. The game will encourage reflection and promote inclusivity.
+                </p>
+                <p class="mt-3 font-grotesk">
+                    <span class="font-bold">Solution:</span><br>
+                    Scenarios like interacting with others while dealing with a disability, or facing discrimination in public spaces (e.g., being ignored, misunderstood, or dismissed), will allow players to feel the impact of stigma firsthand, fostering awareness and encouraging behavioral change.
+                </p>
+            </div>
+        </div>
+    </div>
+    
     
     <!-- Footer -->
     <footer class="flex bg-yellow-500 text-black justify-center font-bold text-xl w-full">
