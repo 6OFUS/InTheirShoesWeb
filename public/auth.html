@@ -12,88 +12,96 @@
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
 </head>
-<body class="bg-white font-grotesk w-screen h-screen">
-    <!-- Header Section -->
-    <header class="absolute w-32 bg-white">
-      <div class="w-full mx-8 flex items-center">
+<body class="flex items-center justify-center min-h-screen bg-pgrey">
+  <div class="relative flex w-[60vw] h-[60vh]">
+
+    <header class="absolute w-14 bg-white">
+      <div class="w-full m-8 flex items-center">
         <img src="img/branding/logo.png" alt="In Their Shoes Logo" class="w-32">
       </div>
     </header>
-  
-    <!-- Login Form Section -->
-    <div id="login-section" class="flex items-center justify-center h-full">
-      <div class="bg-white p-8 max-w-sm w-full">
-        <h1 class="text-center text-2xl text-emerald-900 font-semibold mb-6">Sign in to InTheirShoes</h1>
-  
-        <button id="google-login" class="flex flex-col items-center justify-center w-full py-2 px-4 border border-black rounded-lg text-black hover:bg-gray-100 mb-4">
-          <div class="h-1/6 w-full my-1"><i class="fa-brands fa-google mx-2"></i>
-          Continue with Google</div>
-        </button>
-  
-        <div class="text-center text-gray-500 my-4">or</div>
-  
-        <form id="login-form"> 
-          <input id="login-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-          <input id="login-password" type="password" placeholder="Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-          <h1 id="login-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
-          <button type="submit" class="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800">Log in</button>
-        </form>
 
-        <div class="text-center m-4">
-          <a id="show-reset" href="#" class="text-blue-500 hover:underline">Reset password</a>
-        </div>
-        <div class="text-center mt-4 text-gray-500">
-          No account? <a id="show-signup" href="#" class="text-blue-500 hover:underline">Create one</a>
-        </div>
-      </div>
-    </div>
+    <!-- Left Rectangle -->
+    <div class="w-[47%] h-full bg-white rounded-l-2xl shadow-lg flex flex-col">
+        <!-- Login Form Section -->
+        <div id="login-section" class="flex items-center justify-center h-full">
+          <div class="bg-white p-8 max-w-sm w-full">
+            <h1 class="text-center text-2xl text-emerald-900 font-semibold mb-6">Sign in to InTheirShoes</h1>
+      
+            <button id="google-login" class="flex flex-col items-center justify-center w-full py-2 px-4 border border-black rounded-lg text-black hover:bg-gray-100 mb-4">
+              <div class="h-1/6 w-full my-1"><i class="fa-brands fa-google mx-2"></i>
+              Continue with Google</div>
+            </button>
+      
+            <div class="text-center text-gray-500 my-4">or</div>
+      
+            <form id="login-form"> 
+              <input id="login-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+              <input id="login-password" type="password" placeholder="Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+              <h1 id="login-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
+              <button type="submit" class="w-full bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800">Log in</button>
+            </form>
 
-    <!-- Signup Form Section -->
-    <div id="signup-section" class="hidden flex items-center justify-center h-full">
-        <div class="bg-white p-8 max-w-sm w-full">
-          <h1 class="text-center text-2xl text-emerald-900 font-semibold mb-6">Get Started with InTheirShoes</h1>
-    
-          <button id="signup-google" class="flex flex-col items-center justify-center w-full py-2 px-4 border border-black rounded-lg text-black hover:bg-gray-100 mb-4">
-            <div class="h-1/6 w-full my-1"><i class="fa-brands fa-google mx-2"></i>
-            Continue with Google</div>
-          </button>
-    
-          <div class="text-center text-gray-500 my-4">or</div>
-    
-          <form id="signup-form">
-            <input id="signup-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-            <input id="signup-password" type="password" placeholder="Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-            <input id="signup-confirm-password" type="password" placeholder="Confirm Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-            <h1 id="signup-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
-            <button type="submit" class="w-full bg-black text-white py-2 px-4 my-4 rounded-lg hover:bg-gray-800">Continue</button>
-          </form>
-  
-          <div class="text-center mt-8 text-gray-500">
-            Been here before? <a id="show-login" href="#" class="text-blue-500 hover:underline">Login</a>
+            <div class="text-center m-4">
+              <a id="show-reset" href="#" class="text-blue-500 hover:underline">Reset password</a>
+            </div>
+            <div class="text-center mt-4 text-gray-500">
+              No account? <a id="show-signup" href="#" class="text-blue-500 hover:underline">Create one</a>
+            </div>
           </div>
         </div>
-    </div>
 
-    <!-- Reset Password Form Section -->
-    <div id="reset-section" class="hidden flex items-center justify-center h-full">
-        <div class="bg-white p-8 max-w-md w-full">
-          <h1 class="text-center text-3xl text-emerald-900 font-semibold mb-6">Enter your email to reset password</h1>
-    
-          <form id="reset-password-form">
-            <input id="reset-password-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-            <h1 id="reset-password-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
-            <button type="submit" class="w-full bg-black text-white py-3 px-4 my-4 rounded-lg hover:bg-gray-800">Reset Password</button>
-          </form>
-  
-          <div class="text-center mt-8 text-gray-500">
-            <a id="cancel-reset" href="#" class="text-blue-500 hover:underline">Cancel</a>
-          </div>
+        <!-- Signup Form Section -->
+        <div id="signup-section" class="hidden flex items-center justify-center h-full">
+            <div class="bg-white p-8 max-w-sm w-full">
+              <h1 class="text-center text-2xl text-emerald-900 font-semibold mb-6">Get Started with InTheirShoes</h1>
+        
+              <button id="signup-google" class="flex flex-col items-center justify-center w-full py-2 px-4 border border-black rounded-lg text-black hover:bg-gray-100 mb-4">
+                <div class="h-1/6 w-full my-1"><i class="fa-brands fa-google mx-2"></i>
+                Continue with Google</div>
+              </button>
+        
+              <div class="text-center text-gray-500 my-4">or</div>
+        
+              <form id="signup-form">
+                <input id="signup-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+                <input id="signup-password" type="password" placeholder="Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+                <input id="signup-confirm-password" type="password" placeholder="Confirm Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+                <h1 id="signup-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
+                <button type="submit" class="w-full bg-black text-white py-2 px-4 my-4 rounded-lg hover:bg-gray-800">Continue</button>
+              </form>
+      
+              <div class="text-center mt-8 text-gray-500">
+                Been here before? <a id="show-login" href="#" class="text-blue-500 hover:underline">Login</a>
+              </div>
+            </div>
+        </div>
+
+        <!-- Reset Password Form Section -->
+        <div id="reset-section" class="hidden flex items-center justify-center h-full">
+            <div class="bg-white p-8 max-w-md w-full">
+              <h1 class="text-center text-3xl text-emerald-900 font-semibold mb-6">Enter your email to reset password</h1>
+        
+              <form id="reset-password-form">
+                <input id="reset-password-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+                <h1 id="reset-password-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
+                <button type="submit" class="w-full bg-black text-white py-3 px-4 my-4 rounded-lg hover:bg-gray-800">Reset Password</button>
+              </form>
+      
+              <div class="text-center mt-8 text-gray-500">
+                <a id="cancel-reset" href="#" class="text-blue-500 hover:underline">Cancel</a>
+              </div>
+            </div>
         </div>
     </div>
 
-    <script type="module" src="js/authHandler.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
-    <script src="tailwind.config.js"></script>
+    <!-- Right Rectangle -->
+    <div class="absolute w-[55%] h-full bg-pcyan rounded-2xl shadow-lg right-0 top-0 flex flex-col justify-center items-center bg-[url('img/bg/authbg.png')] bg-center bg-cover bg-no-repeat">
+    </div>
+  </div>
+  <script type="module" src="js/authHandler.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
+  <script src="tailwind.config.js"></script>
 </body>
 </html>

@@ -12,6 +12,7 @@ tailwind.config = {
           'pblue': '#a8eeff',
           'pred': '#ff8a8a',
           'pblack': '#313131',
+          'pcyan': '#B7D0D1',
           'aorange': '#e69f00',
           'agreen': '#2b9f78',
           'alblue': '#56b4e9',
