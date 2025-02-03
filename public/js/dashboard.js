@@ -1,3 +1,8 @@
+import { supabaseUrl, supabaseAnonKey } from "./config.js";
+import { logOut } from "./auth.js"
+
+const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+
 document.addEventListener("DOMContentLoaded", function () {
     const sections = {
         "DASHBOARD": "dashboard-content",
@@ -35,5 +40,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Show dashboard by default
     switchSection("dashboard-content");
-});
 
+    async function checkUser() {
+        const { data, error } = await supabase.auth.getUser();
+        
+        if (error || !data.user) {
+            console.log('User not signed in, redirecting...');
+            window.location.href = 'auth.html';
+            return;
+        }
+        
+        //Displaying user information
+
+        console.log(`Display Name: ${data.user.user_metadata?.full_name || 'N/A'}`);
+        console.log(`Email: ${data.user.email}`);
+
+        document.getElementById('sidebarDisplayName').innerHTML = data.user.user_metadata?.full_name || 'N/A';
+        document.getElementById('sidebarEmail').innerHTML = data.user.email;
+        document.getElementById('profileDisplayName').innerHTML = data.user.user_metadata?.full_name || 'N/A';
+        document.getElementById('profileEmail').innerHTML = data.user.email;
+
+        document.getElementById('profileAvatar').src = data.user.user_metadata?.avatar_url || 'img/characters/blindman.png';
+        document.getElementById('sidebarAvatar').src = data.user.user_metadata?.avatar_url || 'img/characters/blindman.png';
+    }
+
+    checkUser();
+
+    document.getElementById('logoutBtn').addEventListener('click', async function () {
+        logOut();
+        window.location.href = 'auth.html';
+    });
+});

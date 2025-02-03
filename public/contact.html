@@ -22,11 +22,11 @@
                 </div>
             </a>
             <nav class="flex font-garet space-x-4 text-2xl items-center">
-                <a href="#about" class="text-black hover:text-apink">About</a>
-                <a href="#support" class="text-black hover:text-apink">Support</a>
-                <a href="#contact" class="text-black hover:text-apink">Contact Us</a>
+                <a href="/about.html" class="text-black hover:text-apink">About</a>
+                <a href="/support.html" class="text-black hover:text-apink">Support</a>
+                <a href="/contact.html" class="text-black hover:text-apink">Contact Us</a>
                 <div class="flex space-x-4 font-bold items-center">
-                    <button class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Donate</button>
+                    <a href="/donate.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Donate</a>
                     <a href="/auth.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Get Started</a>
                 </div>
             </nav>
@@ -39,16 +39,19 @@
 
     <main class="w-1/4 mx-auto h-full mt-16 font-grotesk font-bold text-pblack">
         <h1 class="text-3xl font-bold">Contact Us</h1>
-        <form class="mt-6 space-y-4">
-            <div class="bg-egg-yellow p-3 rounded-xl flex items-center space-x-3">
+        <form class="mt-6 space-y-4 flex flex-col items-center">
+            <div class="bg-egg-yellow p-3 rounded-xl flex items-center space-x-3 w-full">
                 <i class="fa-solid fa-user text-2xl text-blue-900 mx-1"></i>
                 <input type="text" placeholder="Name" class="bg-transparent outline-none w-full">
             </div>
-            <div class="bg-egg-yellow p-3 rounded-xl flex items-center space-x-3">
+            <div class="bg-egg-yellow p-3 rounded-xl flex items-center space-x-3 w-full">
                 <i class="fa-solid fa-envelope text-2xl text-blue-900 mx-1"></i>
                 <input type="email" placeholder="Email" class="bg-transparent outline-none w-full">
             </div>
             <textarea placeholder="Message" class="bg-egg-yellow p-4 rounded-xl w-full h-36 outline-none"></textarea>
+            <button type="submit" class="m-4 bg-yellow-500 text-emerald-800 font-garet font-bold py-2 px-6 rounded-2xl hover:bg-agreen" id="contactSubmitBtn">
+                Submit
+            </button>
         </form>
         <p class="mt-6 text-pblack text-sm">Join us on our journey to challenge societal barriers and promote empathy! Follow us on Instagram and TikTok @5fiveofus for updates, stories, and behind-the-scenes content.</p>
         <div class="flex space-x-8 text-3xl mt-10 w-full flex justify-center">

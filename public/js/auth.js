@@ -1,9 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-import { firebaseConfig, supabaseUrl, supabaseKey } from './config.js';
+import { firebaseConfig, supabaseUrl, supabaseAnonKey } from './config.js';
 
 const app = initializeApp(firebaseConfig);
-export const supabase = createClient(supabaseUrl, supabaseKey);
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Input Validation
 function isValidEmail(email) {
