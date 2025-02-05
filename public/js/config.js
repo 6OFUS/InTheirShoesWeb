@@ -11,3 +11,6 @@ export const firebaseConfig = {
 // SUPABASE
 export const supabaseUrl = 'https://imfbtilewhhhbqtcwjuh.supabase.co'
 export const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltZmJ0aWxld2hoaGJxdGN3anVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc0Njg0NDcsImV4cCI6MjA1MzA0NDQ0N30.Dt_JC_tDi4gtF5yq2pLSk_gk2B8RbIV1hGNcyk0eGFg'
+
+// EMAILJS
+export const emailJsKey = '_Rdb2Sc0PuoYwfjIg'

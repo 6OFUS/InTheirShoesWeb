@@ -23,11 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(sectionId).classList.remove("hidden");
     }
 
+    function setActiveNav(link) {
+        navLinks.forEach(nav => nav.classList.remove("font-bold", "underline","text-emerald-700"));
+        link.classList.add("font-bold", "underline", "text-emerald-700");
+    }
+
     navLinks.forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault();
             const sectionId = sections[this.textContent.trim()];
-            if (sectionId) switchSection(sectionId);
+            if (sectionId) {
+                switchSection(sectionId);
+                setActiveNav(this);
+            }
         });
     });
 
