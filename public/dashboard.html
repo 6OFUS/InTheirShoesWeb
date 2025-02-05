@@ -279,14 +279,54 @@
                     <div class="flex items-center space-x-6">
                         <label class="text-pblack font-medium w-32">Profile Picture</label>
                         <div class="w-24 h-24 border-4 border-agreen rounded-full flex items-center justify-center">
-                            <img src="img/characters/blindman.png" alt="Profile Pic" class="rounded-full">
+                            <img src="img/characters/blindman.png" alt="Profile Pic" class="rounded-full" id="settingsAvatar">
                         </div>
-                        <button class="bg-black text-white font-medium px-6 py-2 rounded-full">Edit</button>
+                        <button class="bg-black text-white font-medium px-6 py-2 rounded-full" onclick="openModal('edit-picture-modal')">Edit</button>
                         <button class="bg-aorange text-white font-medium px-6 py-2 rounded-full">Delete</button>
                     </div>
                 </div>       
             </div>
         </main>
+    </div>
+
+    <!--Modals-->
+
+    <div id="edit-picture-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
+        <div class="bg-white rounded-lg p-6 w-1/2 h-auto flex flex-col">
+    
+            <!-- Close Button -->
+            <button onclick="closeModal('edit-picture-modal')" class="self-end text-black text-4xl font-bold">&times;</button>
+    
+            <div class="hidden flex flex-col p-6" id="uploadModal">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-lg font-medium text-gray-900">Upload</h2>
+                </div>
+                <p class="text-sm text-gray-500 mb-6">Alternatively, take a picture with your <button class="underline text-blue-500" id="cameraPageBtn">camera</button></p>
+                <div class="border-2 border-dashed border-blue-400 rounded-lg p-12">
+                    <input type="file" id="fileInput"/>
+                </div>
+                <div class="flex justify-end mt-6">
+                    <button class="px-4 py-2 my-2 bg-blue-500 text-white rounded hover:bg-blue-600" id="uploadButton">Upload</button>
+                </div>
+            </div>
+            <div class="flex flex-col p-6" id="camModal">
+                <div class="flex flex-col justify-center items-center">
+                    <button class="self-center w-96 bg-ared text-white font-medium rounded-xl p-2 my-2" id="uploadPageBtn">Upload Image</button>
+                    <div class="flex justify-center mb-6">
+                        <div class="w-96 bg-gray-50 border border-gray-200 rounded-lg flex items-center justify-center">
+                            <video class="rounded-lg" id="webcam" autoplay playsinline></video>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center self-center">
+                        <canvas id="canvas" class="hidden p-12"></canvas>
+                    </div> 
+                    <div>
+                        <button class="bg-black text-white font-medium px-6 py-2 rounded-full" id="captureButton">Take Picture</button>
+                        <button class="hidden bg-aorange text-white font-medium px-6 py-2 rounded-full" id="camUploadButton">Use Photo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <!-- Footer -->
@@ -299,8 +339,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+    
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
     <script type="module" src="js/dashboard.js"></script>
     <script type="module" src="js/gallery.js"></script>
+    <script type="module" src="js/webcam.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
     <script src="tailwind.config.js"></script>

@@ -90,7 +90,7 @@ export async function loginInOTP(email) {
   return data;
 }
 
-// Update User
+// Update User Credentials
 export async function updateUser(email, password) {
   const updates = {};
   if (email) {
@@ -110,6 +110,15 @@ export async function updateUser(email, password) {
   handleAuthError(error);
   return data;
 }
+
+// Update User Avatar
+export async function updateAvatar(avatarUrl) {
+  const { error } = await supabase.auth.updateUser({
+      data: { avatar_url: avatarUrl },
+    });
+    
+    handleAuthError(error);
+}      
 
 // Reset Password
 export async function resetPassword(email) {
