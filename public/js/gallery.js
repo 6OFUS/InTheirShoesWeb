@@ -39,6 +39,10 @@ async function displayGallery(userId) {
         });
     });
 
+    if (photos.length > 0) {
+        galleryContainer.innerHTML = "";
+    }
+
     photos.forEach(photo => {
         const button = document.createElement('button');
         button.className = 'bg-yellow-700 h-80 w-full rounded-lg overflow-hidden shadow-xl';

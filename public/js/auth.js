@@ -111,6 +111,14 @@ export async function updateUser(email, password) {
   return data;
 }
 
+export async function updateUserName(name) {
+  const { data, error } = await supabase.auth.updateUser(
+    { displayName: name }
+  );
+  handleAuthError(error);
+  return data;
+}
+
 // Update User Avatar
 export async function updateAvatar(avatarUrl) {
   const { error } = await supabase.auth.updateUser({

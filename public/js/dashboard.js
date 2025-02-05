@@ -60,12 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
         
         //Displaying user information
 
-        console.log(`Display Name: ${data.user.user_metadata?.full_name || 'N/A'}`);
+        console.log(`Display Name: ${data.user.user_metadata?.full_name || 'Player'}`);
         console.log(`Email: ${data.user.email}`);
 
-        document.getElementById('sidebarDisplayName').innerHTML = data.user.user_metadata?.full_name || 'N/A';
+        document.getElementById('sidebarDisplayName').innerHTML = data.user.user_metadata?.full_name || 'Player';
         document.getElementById('sidebarEmail').innerHTML = data.user.email;
-        document.getElementById('profileDisplayName').innerHTML = data.user.user_metadata?.full_name || 'N/A';
+        document.getElementById('profileDisplayName').innerHTML = data.user.user_metadata?.full_name || 'Player';
         document.getElementById('profileEmail').innerHTML = data.user.email;
 
         document.getElementById('profileAvatar').src = data.user.user_metadata?.avatar_url || 'img/characters/blindman.png';

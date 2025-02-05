@@ -1,4 +1,4 @@
-import { signUp, loginInPW, logInGoogle, resetPassword, supabase } from './auth.js';
+import { signUp, loginInPW, logInGoogle, resetPassword, supabase, updateUserName } from './auth.js';
 
 supabase.auth.onAuthStateChange((event, session) => {
     if (event === 'SIGNED_IN') {
@@ -100,6 +100,7 @@ if (signUpForm) {
       await signUp(email, password);
     } catch (error) {
       showError('signup-error', error.message);
+      return;
     }
   });
 }
