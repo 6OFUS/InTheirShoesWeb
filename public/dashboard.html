@@ -12,6 +12,7 @@
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.47.10/dist/umd/supabase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head> 
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center">
     <div class="flex w-full">
@@ -194,13 +195,13 @@
             </div>
         </main>
 
-        <!-- Statistics Content TODO -->
+        <!-- Statistics Content -->
         <main id='statistics-content' class="hidden flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
             <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2"> 
-                <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Statistics</a>
+                <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Statistics/Leaderboard</a>
             </div>
             <div class="flex justify-between items-center">
-                <h1 class="text-2xl font-bold font-garet">STATISTICS</h1>
+                <h1 class="text-2xl font-bold font-garet">STATISTICS/LEADERBOARD</h1>
                 <div class="flex flex-row">
                     <img class="w-20 h-20" src="./img/branding/logo.png" alt="Logo">
                     <div class="flex flex-col bg-yellow-500 font-garet font-bold px-3 py-2 rounded-2xl shadow- justify-center items-center">
@@ -209,36 +210,23 @@
                 </div>
             </div>
 
-            <!-- Grid Layout -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
-                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample2.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample2.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8  rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample2.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8  rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
+            <div class='p-6 font-grotesk'>
+                <table class='w-full border border-pblack'>
+                    <thead>
+                        <tr class='bg-pblack text-pgrey'>
+                            <th class='px-4 py-2'>Rank</th>
+                            <th class='px-4 py-2'>Name</th>
+                            <th class='px-4 py-2'>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id='leaderboard'></tbody>
+                </table>
+                
+                <h2 class='text-2xl font-bold text-pblack mt-6 mb-4'>Top 10 Players by Total Playtime</h2>
+                <canvas id='playtimeChart' class='bg-white p-4 rounded-lg shadow-lg'></canvas>
+                
+                <h2 class='text-2xl font-bold text-pblack mt-6 mb-4'>Points Over Time</h2>
+                <canvas id='pointsChart' class='bg-white p-4 rounded-lg shadow-lg'></canvas>
             </div>
         </main>
 
@@ -290,7 +278,6 @@
     </div>
 
     <!--Modals-->
-
     <div id="edit-picture-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
         <div class="bg-white rounded-lg p-6 w-1/2 h-auto flex flex-col">
     
@@ -351,6 +338,7 @@
     <script type="module" src="js/dashboard.js"></script>
     <script type="module" src="js/gallery.js"></script>
     <script type="module" src="js/webcam.js"></script>
+    <script type="module" src="js/leaderboard.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
     <script src="tailwind.config.js"></script>
