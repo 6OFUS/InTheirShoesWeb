@@ -14,3 +14,6 @@ export const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ
 
 // EMAILJS
 export const emailJsKey = '_Rdb2Sc0PuoYwfjIg'
+
+// GEMINI
+export const GEMINI_API_KEY = "AIzaSyBH_iEDqQdkOCFIER5Vk79mWLTMP3UgfBQ";
