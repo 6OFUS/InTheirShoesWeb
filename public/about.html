@@ -10,6 +10,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center">
     <div class="flex bg-white shadow-md h-32 w-full">
@@ -39,7 +41,7 @@
     </div>
 
     <!-- Mission Section -->
-    <section class="font-garet flex py-16 bg-white w-3/4 justify-center items-center">
+    <section class="font-garet flex py-16 bg-white w-3/4 justify-center items-center" data-aos="fade-up">
         <div class="container mx-auto text-start px-24">
             <h2 class="text-3xl font-bold text-emerald-900 mb-6">Mission</h2>
             <hr class="my-8 border-1 border-black w-1/5">
@@ -56,23 +58,23 @@
             <h2 class="text-4xl font-bold text-green-900 font-garet">Core Values</h2>
             <hr class="h-px my-10 border-1 border-black w-14">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4 px-8">
-                <div class="bg-yellow-100 p-4 rounded-lg shadow-md">
+                <div class="bg-yellow-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
                     <i class="fa-solid fa-heart text-yellow-700 text-7xl p-12"></i>
                     <p class="text-lg font-semibold text-yellow-700">Empathy</p>
                 </div>
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md">
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
                     <i class="fa-solid fa-users text-gray-700 text-7xl p-12"></i>
                     <p class="text-lg font-semibold text-gray-700">Inclusivity</p>
                 </div>
-                <div class="bg-red-100 p-4 rounded-lg shadow-md">
+                <div class="bg-red-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
                     <i class="fa-solid fa-handshake text-red-700 text-7xl p-12"></i>
                     <p class="text-lg font-semibold text-red-700">Respect</p>
                 </div>
-                <div class="bg-blue-100 p-4 rounded-lg shadow-md">
+                <div class="bg-blue-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
                     <i class="fa-solid fa-school text-emerald-900 text-7xl p-12"></i>
                     <p class="text-lg font-semibold text-emerald-900">Education</p>
                 </div>
-                <div class="bg-green-100 p-4 rounded-lg shadow-md">
+                <div class="bg-green-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
                     <i class="fa-solid fa-thumbs-up text-green-700 text-7xl p-12"></i>
                     <p class="text-lg font-semibold text-green-700">Social Good</p>
                 </div>
@@ -82,7 +84,7 @@
 
     <!-- Team Section -->
     <section class="py-16 bg-gray-200 w-full">
-        <div class="flex flex-col container mx-auto justify-center items-center">
+        <div class="flex flex-col container mx-auto justify-center items-center" data-aos="fade-right">
             <h2 class="text-4xl font-bold font-garet text-emerald-900">Meet the Team</h2>
             <hr class="h-px my-10 border-1 border-black w-14">
             <div class="w-3/4 grid grid-cols-2 md:grid-cols-5 gap-4 px-8">
@@ -102,7 +104,7 @@
 
     <section class="py-16 bg-white">
         <div class="container mx-auto text-center">
-            <div class="grid grid-cols-5 gap-6 px-6">
+            <div class="grid grid-cols-5 gap-6 px-6" data-aos="fade-up">
                 <!-- Leader -->
                 <div onclick="openModal('leader-modal')" class="bg-blue-100 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
                     <img src="img/characters/al.png" alt="Leader" class="mx-auto mb-4 rounded-full">
@@ -415,6 +417,14 @@
         </div>
     </footer>
     <script>
+        // AOS
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // Modal
         function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');
         }

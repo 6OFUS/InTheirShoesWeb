@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center">
     <div class="flex bg-white shadow-md h-32 w-full">
@@ -39,7 +41,7 @@
         <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/support.html" class="text-black hover:text-apink">Support</a>
     </div>
 
-    <section class="flex py-16 bg-white w-3/4 justify-center items-center">
+    <section class="flex py-16 bg-white w-3/4 justify-center items-center" data-aos="fade-up">
         <div class="container mx-auto text-start px-24">
             <h2 class="text-3xl font-bold text-emerald-900 mb-6">Support Company 1</h2>
             <hr class="my-5 border-1 border-black w-1/5">
@@ -49,7 +51,7 @@
         </div>
         <img src="img/bg/teambanner.png" alt="5OFUS Banner" class="h-64 mx-8 mb-4 rounded-full">
     </section>
-    <section class="flex py-16 bg-white w-3/4 justify-center items-center">
+    <section class="flex py-16 bg-white w-3/4 justify-center items-center" data-aos="fade-up">
         <div class="container mx-auto text-start px-24">
             <h2 class="text-3xl font-bold text-emerald-900 mb-6">Support Company 2</h2>
             <hr class="my-5 border-1 border-black w-1/5">
@@ -59,7 +61,7 @@
         </div>
         <img src="img/bg/teambanner.png" alt="5OFUS Banner" class="h-64 mx-8 mb-4 rounded-full">
     </section>
-    <section class="flex py-16 bg-white w-3/4 justify-center items-center">
+    <section class="flex py-16 bg-white w-3/4 justify-center items-center" data-aos="fade-up">
         <div class="container mx-auto text-start px-24">
             <h2 class="text-3xl font-bold text-emerald-900 mb-6">Support Company 3</h2>
             <hr class="my-5 border-1 border-black w-1/5">
@@ -80,7 +82,14 @@
             </div>
         </div>
     </footer>
-    <!-- <script type="module" src="js/dashboard.js"></script> -->
+    <script>
+        // AOS
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
     <script src="tailwind.config.js"></script>

@@ -40,7 +40,7 @@ new Chart(ctx2, {
     options: { responsive: true }
 });
 
-// Points Leaderboard (Table Render)
+// LEADERBOARD
 const leaderboard = document.getElementById("leaderboard");
 players.sort((a, b) => b.points - a.points).forEach((player, index) => {
     const row = `<tr><td>${index + 1}</td><td>${player.name}</td><td>${player.points}</td></tr>`;

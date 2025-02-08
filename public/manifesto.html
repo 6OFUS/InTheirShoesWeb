@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center">
     <div class="flex bg-white shadow-md h-32 w-full">
@@ -46,7 +48,7 @@
         <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/manifesto.html" class="text-black hover:text-apink">Manifesto</a>
     </div>
 
-    <section class="flex py-12 bg-white w-11/12 justify-center items-center">
+    <section class="flex py-12 bg-white w-11/12 justify-center items-center" data-aos="fade-up">
         <div class="container mx-auto text-start px-24">
             <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Introduction</h2>
             <hr class="my-5 border-1 border-black w-1/5">
@@ -57,7 +59,7 @@
         <img src="img/branding/logo3.png" alt="5OFUS Banner" class="h-80 mx-8 mb-4 rounded-full">
     </section>
 
-    <section class="flex py-12 bg-white w-11/12 justify-center items-center">
+    <section class="flex py-12 bg-white w-11/12 justify-center items-center" data-aos="fade-up">
         <img src="img/branding/logo2.png" alt="5OFUS Banner" class="h-80 mx-8 mb-4 rounded-full">
         <div class="container mx-auto text-start px-24">
             <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Purpose</h2>
@@ -68,7 +70,7 @@
         </div>
     </section>
 
-    <section class="bg-egg-yellow p-20 rounded-2xl w-11/12 mx-auto mt-10 shadow-lg flex justify-center items-center flex-col">
+    <section class="bg-egg-yellow p-20 rounded-2xl w-11/12 mx-auto mt-10 shadow-lg flex justify-center items-center flex-col" data-aos="zoom-in" data-aos-duration="800">
         <h1 class="text-3xl font-garet font-bold text-start">About The Game</h1>
         <hr class="my-5 border-1 border-black w-24">
         <div class="mt-5 flex flex-col md:flex-row gap-6">
@@ -91,7 +93,7 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 px-8 mt-96">
         <!-- Visual Impairment Simulation -->
-        <div class="relative flex flex-col items-center bg-gray-300 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16">
+        <div class="relative flex flex-col items-center bg-gray-300 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16" data-aos="fade-up">
             <img src="img/characters/blindman.png" alt="Blind Man" class="absolute top-[-50%] w-54">
             <h3 class="font-garet font-bold text-lg mt-8">Visual Impairment Simulation</h3>
             <hr class="self-start w-8 border-t-2 border-black my-4">
@@ -101,7 +103,7 @@
         </div>
     
         <!-- Hearing Impairment Simulation -->
-        <div class="relative flex flex-col items-center bg-blue-200 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16">
+        <div class="relative flex flex-col items-center bg-blue-200 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16" data-aos="fade-up">
             <img src="img/characters/deafgirl.png" alt="Deaf Girl" class="absolute top-[-50%] w-54">
             <h3 class="font-garet font-bold text-lg mt-8">Hearing Impairment Simulation</h3>
             <hr class="self-start w-8 border-t-2 border-black my-4">
@@ -111,7 +113,7 @@
         </div>
     
         <!-- Mental Impairment Simulation -->
-        <div class="relative flex flex-col items-center bg-yellow-200 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16 mt-64">
+        <div class="relative flex flex-col items-center bg-yellow-200 rounded-t-full px-12 w-80 mx-auto pt-24 pb-16 mt-64" data-aos="fade-up">
             <img src="img/characters/dyslexiaboy.png" alt="Dyslexia Boy" class="absolute top-[-50%] w-54">
             <h3 class="font-garet font-bold text-lg mt-8">Mental Impairment Simulation</h3>
             <hr class="self-start w-8 border-t-2 border-black my-4">
@@ -121,7 +123,7 @@
         </div>
     
         <!-- Physical Impairment Simulation -->
-        <div class="relative flex flex-col items-center bg-pcyan rounded-t-full px-12 w-80 mx-auto pt-24 pb-16 mt-64">
+        <div class="relative flex flex-col items-center bg-pcyan rounded-t-full px-12 w-80 mx-auto pt-24 pb-16 mt-64" data-aos="fade-up">
             <img src="img/characters/wheelchairgirl.png" alt="Wheelchair Girl" class="absolute top-[-50%] w-54">
             <h3 class="font-garet font-bold text-lg mt-8">Physical Impairment Simulation</h3>
             <hr class="self-start w-8 border-t-2 border-black my-4">
@@ -134,7 +136,7 @@
     <div class="flex flex-col items-center rounded-lg shadow-lg w-11/12 bg-gray-200 p-16 w-11/12 m-24">
         <h1 class="text-center text-4xl font-garet font-bold text-pblack mb-8">Goals & Objectives</h1>
         <hr class="self-center align-center border-t-2 border-black w-24">
-        <div class="grid grid-cols-4 gap-4 my-16 items-start flex justify-center items-center">
+        <div class="grid grid-cols-4 gap-4 my-16 items-start flex justify-center items-center" data-aos="fade-left">
             <!-- Number 1 -->
             <img src="img/bg/manifestoNumber1.png" alt="1" class="h-72">
             <div class="col-span-3">
@@ -150,7 +152,7 @@
             </div>
         </div>
     
-        <div class="grid grid-cols-4 gap-4 my-24 items-start flex justify-center items-center">
+        <div class="grid grid-cols-4 gap-4 my-24 items-start flex justify-center items-center" data-aos="fade-left">
             <!-- Number 2 -->
             <img src="img/bg/manifestoNumber2.png" alt="2" class="h-72">
             <div class="col-span-3">
@@ -178,6 +180,14 @@
             </div>
         </div>
     </footer>
+    <script>
+        // AOS
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
     <script type="module" src="js/.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
