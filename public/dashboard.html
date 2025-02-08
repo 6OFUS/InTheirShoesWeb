@@ -47,14 +47,14 @@
                 </ul>
             </nav>
             <hr class="my-8 border-1 border-black w-1/5">
-            <button class="bg-yellow-500 text-emerald-800 font-garet font-bold py-2 px-6 rounded-full hover:bg-agreen" id="logoutBtn">
+            <button class="bg-yellow-500 text-emerald-800 font-garet font-bold py-2 px-6 rounded-full hover:bg-agreen" id="logoutBtn"><i class="fa-solid fa-right-from-bracket fa-lg pr-3"></i>
                 Log Out
             </button>
         </aside>
 
         <!-- Dashboard Content -->
         <main id='dashboard-content' class="hidden flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
-            <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2"> 
+            <div class="flex pt-4 items-start text-start justify-start align-start w-11/12 space-x-2"> 
                 <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a>
             </div>
             <div class="flex justify-between items-center">
@@ -75,7 +75,7 @@
                 </div>
                 <div class="bg-egg-yellow px-6 py-12 rounded-lg flex flex-col justify-center items-center shadow-lg">
                     <i class="text-5xl text-yellow-900 fa-solid fa-shop my-4"></i>
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">SHOP / SKIN</button>
+                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">SHOP / SKINS</button>
                 </div>
                 <div class="bg-egg-yellow px-6 py-12 rounded-lg flex flex-col justify-center items-center shadow-lg">
                     <i class="text-5xl text-yellow-900 fa-solid fa-photo-film my-4"></i>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="bg-egg-yellow px-6 py-12 rounded-lg flex flex-col justify-center items-center shadow-lg">
                     <i class="text-5xl text-yellow-900 fa-solid fa-chart-simple my-4"></i>
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">STATISTIC</button>
+                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">STATISTICS</button>
                 </div>
                 <div class="bg-egg-yellow px-6 py-12 rounded-lg flex flex-col justify-center items-center shadow-lg">
                     <i class="text-5xl text-yellow-900 fa-solid fa-gear my-4"></i>
@@ -94,7 +94,7 @@
         
         <!-- Profile Content -->
         <main id='profile-content' class="hidden flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
-            <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2"> 
+            <div class="flex pt-4 items-start text-start justify-start align-start w-11/12 space-x-2"> 
                 <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Profile</a>
             </div>
             <div class="flex justify-between items-center">
@@ -107,26 +107,71 @@
                 </div>
             </div>
             <div class="m-10 space-x-12 flex">
-                <div class="w-36 h-36 bg-white border-0 border-agreen rounded-full flex items-center justify-center">
-                    <img src="img/characters/blindman.png" alt="Profile Pic" class="w-full h-full object-cover rounded-full" id="profileAvatar">
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="w-36 h-36 bg-white border-0 border-agreen rounded-full flex items-center justify-center">
+                        <img src="img/characters/blindman.png" alt="Profile Pic" class="w-full h-full object-cover rounded-full" id="profileAvatar">
+                    </div>
+                    <button class="bg-black text-white font-medium px-6 py-2 rounded-full" onclick="openModal('edit-picture-modal')">Edit</button>
                 </div>
                 <div class="space-y-4">
-                    <div>
-                        <h2 class="mt-3 font-bold text-lg text-pblack" id="profileDisplayName">NAME NAME</h2>
-                        <p class="text-sm text-gray-600" id="profileEmail">name@gmail.com</p>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <p class="py-2 text-lg font-semibold">Username</p><p class="text-gray-600" id="profileDisplayName"></p>
+                        <button class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeDisplayNameBtn">Change</button>
+                        </div>
+                        <div class="hidden" id="changeUsernameLabel">
+                            <label>
+                                <span class="text-sm text-gray-500">New Username</span>
+                                <div
+                                class="w-1/2 relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-700">
+                                <input type="text"
+                                    class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="newUsernameText"/>
+                                </div>
+                            </label>
+                            <button class="py-5 inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeUsernameCfmBtn">Change Username</button>
                     </div>
-                    <hr class="my-8 border-1 border-black w-full">
-                    <p class="text-sm text-gray-600"><span class="font-bold">Phone:</span> +65 88888888</p>
-                    <p class="text-sm text-gray-600"><span class="font-bold">Address:</span> 5ofus Avnue 1, 12345</p>
-                    <p class="text-sm text-gray-600"><span class="font-bold">Birthday:</span> 1/11/1111</p>
-                    <p class="text-sm text-gray-600"><span class="font-bold">Gender:</span> Male</p>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <p class="py-2 text-lg font-semibold">Email Address</p><p class="text-gray-600" id="profileEmail"></p>
+                    <button class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeEmailBtn">Change</button>
+                    </div>
+                    <div class="hidden" id="changeEmailLabel">
+                        <label>
+                            <span class="text-sm text-gray-500">New Email</span>
+                            <div class="w-1/2 relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-700">
+                            <input type="text" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="newEmailText"/>
+                            </div>
+                        </label>
+                        <button class="py-5 inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeEmailCfmBtn">Update Email</button>
+                    </div>
+                    <hr class="mt-4 mb-8 border-gray-700"/>
+                    <p class="py-2 text-xl font-semibold">Password</p>
+                    <div class="flex items-center">
+                        <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
+                            <label>
+                            <span class="text-sm text-gray-500">Current Password</span>
+                            <div class="relative flex overflow-hidden rounded-md border-2 transition border-gray-300 focus-within:border-blue-700">
+                                <input type="password" class="w-full flex-shrink appearance-none bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="currentPasswordText"/>
+                            </div>
+                            </label>
+                            <label>
+                            <span class="text-sm text-gray-500">New Password</span>
+                            <div class="relative flex overflow-hidden rounded-md border-2 transition border-gray-300 focus-within:border-blue-700">
+                                <input type="password" class="w-full flex-shrink appearance-none bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="newPasswordText"/>
+                            </div>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="py-4 text-blue-600 text-mg font-semibold underline" id="changePasswordBtn">Change Password</button>
+                    <div class="space-x-10">
+                        <button class="py-2 text-yellow-600 text-lg font-semibold" id="logoutAccountBtn"><i class="fa-solid fa-right-from-bracket fa-lg pr-3"></i>Log Out</button>
+                        <button onclick="openModal('confirmationModal')" class="py-2 text-apred text-lg font-semibold" id="deleteAccountBtn"><i class="fa-solid fa-triangle-exclamation fa-lg text-pink pr-3"></i>Deactivate and Delete Account</button>
+                    </div>
                 </div>
             </div>
         </main>
 
         <!-- Shop Content -->
         <main id='shop-content' class="hidden flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
-            <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2"> 
+            <div class="flex pt-4 items-start text-start justify-start align-start w-11/12 space-x-2"> 
                 <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Shop/Skins</a>
             </div>
             <div class="flex justify-between items-center">
@@ -174,7 +219,7 @@
 
         <!-- Gallery Content -->
         <main id='gallery-content' class="hidden flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
-            <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2"> 
+            <div class="flex pt-4 items-start text-start justify-start align-start w-11/12 space-x-2"> 
                 <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Gallery</a>
             </div>
             <div class="flex justify-between items-center">
@@ -197,7 +242,7 @@
 
         <!-- Statistics Content -->
         <main id='statistics-content' class="hidden flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
-            <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2"> 
+            <div class="flex pt-4 items-start text-start justify-start align-start w-11/12 space-x-2"> 
                 <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Statistics/Leaderboard</a>
             </div>
             <div class="flex justify-between items-center">
@@ -232,7 +277,7 @@
 
         <!-- Settings Content -->
         <main id='settings-content' class="flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
-            <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2"> 
+            <div class="flex pt-4 items-start text-start justify-start align-start w-11/12 space-x-2"> 
                 <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Settings</a>
             </div>
             <div class="flex justify-between items-center">
@@ -280,7 +325,6 @@
     <!--Modals-->
     <div id="edit-picture-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
         <div class="bg-white rounded-lg p-6 w-1/2 h-auto flex flex-col">
-    
             <!-- Close Button -->
             <button onclick="closeModal('edit-picture-modal')" class="self-end text-black text-4xl font-bold">&times;</button>
     
@@ -315,6 +359,32 @@
             </div>
         </div>
     </div>
+
+    <div class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start" id="confirmationModal">
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                  <div class="mx-auto flex size-12 shrink-0 items-center justify-center rounded-full sm:mx-0 sm:size-10">
+                    <i class="fa-solid fa-triangle-exclamation fa-2xl text-black"></i>
+                  </div>
+                  <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                    <p class="text-xl text-black" id="modal-title">Deactivate and Delete account</p>
+                    <div class="mt-2">
+                      <p class="text-sm text-black">Are you sure you want to deactivate and delete your account? All of your data will be permanently removed. This action cannot be undone.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto" id="deleteAccountCfmBtn">Deactivate and Delete</button>
+                <button onclick="closeModal('confirmationModal')" type="button" class="inline-flex w-full justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
     <!-- Footer -->
     <footer class="flex bg-yellow-500 text-black justify-center font-bold text-xl w-full">
@@ -326,6 +396,7 @@
             </div>
         </div>
     </footer>
+
     <script>
         function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');

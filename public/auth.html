@@ -11,18 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body class="flex items-center justify-center min-h-screen bg-pgrey">
   <div class="relative flex w-[60vw] h-[60vh]">
-
-    <header class="absolute w-14 bg-white rounded-2xl">
-      <div class="w-full m-8 flex items-center">
-        <img src="img/branding/logo.png" alt="In Their Shoes Logo" class="w-32">
-      </div>
-    </header>
-
     <!-- Left Rectangle -->
-    <div class="w-[47%] h-full bg-white rounded-l-2xl shadow-lg flex flex-col">
+    <div class="w-[47%] h-full bg-white rounded-l-2xl shadow-lg flex flex-col" data-aos="fade-left">
+        <div class="absolute w-14 bg-white rounded-2xl">
+          <div class="w-full m-8 flex items-center">
+            <img src="img/branding/logo.png" alt="In Their Shoes Logo" class="w-32">
+          </div>
+        </div>
         <!-- Login Form Section -->
         <div id="login-section" class="flex items-center justify-center h-full">
           <div class="bg-white p-8 max-w-sm w-full">
@@ -99,6 +99,14 @@
     <div class="absolute w-[55%] h-full bg-pcyan rounded-2xl shadow-lg right-0 top-0 flex flex-col justify-center items-center bg-[url('img/bg/authbg.png')] bg-center bg-cover bg-no-repeat">
     </div>
   </div>
+  <script>
+    // AOS
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+    });
+  </script>
   <script type="module" src="js/authHandler.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>

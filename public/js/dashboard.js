@@ -59,10 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         //Displaying user information
-
-        console.log(`Display Name: ${data.user.user_metadata?.full_name || 'Player'}`);
-        console.log(`Email: ${data.user.email}`);
-
         document.getElementById('sidebarDisplayName').innerHTML = data.user.user_metadata?.full_name || 'Player';
         document.getElementById('sidebarEmail').innerHTML = data.user.email;
         document.getElementById('profileDisplayName').innerHTML = data.user.user_metadata?.full_name || 'Player';
