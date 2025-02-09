@@ -12,7 +12,7 @@ function isValidEmail(email) {
 }
 
 function isValidPassword(password) {
-  // Password must be at least 8 characters, contain one uppercase, one lowercase, one digit, and one special character
+  // 8 characters, contain one uppercase, one lowercase, one digit, and one special character
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-={}\[\]:;"'<>,.?/]).{8,}$/;
   return passwordRegex.test(password);
 }

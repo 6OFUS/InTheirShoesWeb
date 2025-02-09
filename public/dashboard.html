@@ -94,73 +94,71 @@
         
         <!-- Profile Content -->
         <main id='profile-content' class="hidden flex-1 p-8 w-full bg-[url('img/bg/contact.png')] bg-bottom bg-no-repeat bg-contain">
-            <div class="flex pt-4 items-start text-start justify-start align-start w-11/12 space-x-2"> 
-                <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Profile</a>
+            <div class="flex pt-4 items-start text-start justify-start w-11/12 space-x-2"> 
+                <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dashboard.html" class="text-black hover:text-apink">Dashboard</a> <span>></span> <a href="/profile.html" class="text-black hover:text-apink">Profile</a>
             </div>
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold font-garet">PROFILE</h1>
-                <div class="flex flex-row">
+                <div class="flex flex-row items-center">
                     <img class="w-20 h-20" src="./img/branding/logo.png" alt="Logo">
-                    <div class="flex flex-col bg-yellow-500 font-garet font-bold px-3 py-2 rounded-2xl shadow- justify-center items-center">
+                    <div class="flex flex-col bg-yellow-500 font-garet font-bold px-3 py-2 rounded-2xl shadow-md justify-center items-center">
                         <h1 class="text-sm text-emerald-800">Disability is not a barrier. <br>Discrimination is.</h1>
                     </div>
                 </div>
             </div>
             <div class="m-10 space-x-12 flex">
                 <div class="flex flex-col items-center space-y-4">
-                    <div class="w-36 h-36 bg-white border-0 border-agreen rounded-full flex items-center justify-center">
+                    <div class="w-36 h-36 bg-white border-agreen rounded-full flex items-center justify-center">
                         <img src="img/characters/blindman.png" alt="Profile Pic" class="w-full h-full object-cover rounded-full" id="profileAvatar">
                     </div>
                     <button class="bg-black text-white font-medium px-6 py-2 rounded-full" onclick="openModal('edit-picture-modal')">Edit</button>
                 </div>
                 <div class="space-y-4">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                        <p class="py-2 text-lg font-semibold">Username</p><p class="text-gray-600" id="profileDisplayName"></p>
-                        <button class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeDisplayNameBtn">Change</button>
-                        </div>
-                        <div class="hidden" id="changeUsernameLabel">
-                            <label>
-                                <span class="text-sm text-gray-500">New Username</span>
-                                <div
-                                class="w-1/2 relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-700">
-                                <input type="text"
-                                    class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="newUsernameText"/>
-                                </div>
-                            </label>
-                            <button class="py-5 inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeUsernameCfmBtn">Change Username</button>
+                        <p class="py-2 text-lg font-semibold">Username</p>
+                        <p class="text-gray-600" id="profileDisplayName"></p>
+                        <button class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeUsernameBtn">Change</button>
+                    </div>
+                    <div class="hidden" id="changeUsernameLabel">
+                        <label>
+                            <span class="text-sm text-gray-500">New Username</span>
+                            <div class="relative flex overflow-hidden rounded-md border-2 focus-within:border-blue-700">
+                                <input type="text" class="w-full bg-white py-2 px-4 text-gray-700 placeholder-gray-400 focus:outline-none" id="newUsernameText"/>
+                            </div>
+                        </label>
+                        <button class="py-2 text-sm font-semibold text-blue-600 underline decoration-2" id="changeUsernameCfmBtn">Change Username</button>
                     </div>
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                    <p class="py-2 text-lg font-semibold">Email Address</p><p class="text-gray-600" id="profileEmail"></p>
-                    <button class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeEmailBtn">Change</button>
+                        <p class="py-2 text-lg font-semibold">Email Address</p>
+                        <p class="text-gray-600" id="profileEmail"></p>
+                        <button class="inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeEmailBtn">Change</button>
                     </div>
                     <div class="hidden" id="changeEmailLabel">
                         <label>
                             <span class="text-sm text-gray-500">New Email</span>
-                            <div class="w-1/2 relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-700">
-                            <input type="text" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="newEmailText"/>
+                            <div class="relative flex overflow-hidden rounded-md border-2 focus-within:border-blue-700">
+                                <input type="text" class="w-full bg-white py-2 px-4 text-gray-700 placeholder-gray-400 focus:outline-none" id="newEmailText"/>
                             </div>
                         </label>
-                        <button class="py-5 inline-flex text-sm font-semibold text-blue-600 underline decoration-2" id="changeEmailCfmBtn">Update Email</button>
+                        <button class="py-2 text-sm font-semibold text-blue-600 underline decoration-2" id="changeEmailCfmBtn">Update Email</button>
                     </div>
                     <hr class="mt-4 mb-8 border-gray-700"/>
                     <p class="py-2 text-xl font-semibold">Password</p>
-                    <div class="flex items-center">
-                        <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
-                            <label>
+                    <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
+                        <label>
                             <span class="text-sm text-gray-500">Current Password</span>
-                            <div class="relative flex overflow-hidden rounded-md border-2 transition border-gray-300 focus-within:border-blue-700">
-                                <input type="password" class="w-full flex-shrink appearance-none bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="currentPasswordText"/>
+                            <div class="relative flex overflow-hidden rounded-md border-2 focus-within:border-blue-700">
+                                <input type="password" class="w-full bg-white py-2 px-4 text-gray-700 placeholder-gray-400 focus:outline-none" id="currentPasswordText"/>
                             </div>
-                            </label>
-                            <label>
+                        </label>
+                        <label>
                             <span class="text-sm text-gray-500">New Password</span>
-                            <div class="relative flex overflow-hidden rounded-md border-2 transition border-gray-300 focus-within:border-blue-700">
-                                <input type="password" class="w-full flex-shrink appearance-none bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" id="newPasswordText"/>
+                            <div class="relative flex overflow-hidden rounded-md border-2 focus-within:border-blue-700">
+                                <input type="password" class="w-full bg-white py-2 px-4 text-gray-700 placeholder-gray-400 focus:outline-none" id="newPasswordText"/>
                             </div>
-                            </label>
-                        </div>
+                        </label>
                     </div>
-                    <button class="py-4 text-blue-600 text-mg font-semibold underline" id="changePasswordBtn">Change Password</button>
+                    <button class="py-4 text-blue-600 text-md font-semibold underline" id="changePasswordBtn">Change Password</button>
                     <div class="space-x-10">
                         <button class="py-2 text-yellow-600 text-lg font-semibold" id="logoutAccountBtn"><i class="fa-solid fa-right-from-bracket fa-lg pr-3"></i>Log Out</button>
                         <button onclick="openModal('confirmationModal')" class="py-2 text-apred text-lg font-semibold" id="deleteAccountBtn"><i class="fa-solid fa-triangle-exclamation fa-lg text-pink pr-3"></i>Deactivate and Delete Account</button>
@@ -378,7 +376,7 @@
                 </div>
               </div>
               <div class="bg-white px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto" id="deleteAccountCfmBtn">Deactivate and Delete</button>
+                <button type="button" id="deleteAccountCfmBtn" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto" id="deleteAccountCfmBtn">Deactivate and Delete</button>
                 <button onclick="closeModal('confirmationModal')" type="button" class="inline-flex w-full justify-center rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto">Cancel</button>
               </div>
             </div>
@@ -410,6 +408,7 @@
     <script type="module" src="js/gallery.js"></script>
     <script type="module" src="js/webcam.js"></script>
     <script type="module" src="js/leaderboard.js"></script>
+    <script type="module" src="js/profile.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
     <script src="tailwind.config.js"></script>
