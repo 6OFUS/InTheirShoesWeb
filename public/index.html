@@ -142,20 +142,75 @@
         </div>
     </section>    
 
+    <!-- Accessibility -->
+    <section class="fixed bottom-32 right-4">
+        <button onclick="openModal('accessibilityModal')" class="rounded-full shadow-lg">
+            <img src="img/bg/settingBTN.png" alt="Chatbot" class="w-24 h-24">
+        </button>
+        
+        <div id="accessibilityModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+            <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 relative">
+                <button onclick="closeModal('accessibilityModal')" class="self-end text-black text-4xl font-bold">&times;</button>
+                <img src="img/bg/settingBTN.png" alt="Chatbot" class="mx-auto my-4 w-16 h-16">
+                <h1 class="text-xl font-bold text-center mb-4">Accessibility Settings</h1>
+                <hr class="mx-auto mt-4 mb-6 border-gray-300 w-2/3 border-1">
+                <section class="flex items-center justify-center h-full my-20 p-4">
+                    <div class="flex w-full h-full bg-white rounded-lg">
+                      <div class="flex flex-col items-center justify-center w-1/2 h-full border-r border-gray-300 p-4">
+                        <div class="flex items-center space-x-2">
+                          <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="dyslexicSwitch" class="sr-only peer" onclick="toggleSwitch()">
+                            <div class="w-20 h-10 bg-aorange rounded-full peer flex items-center">
+                              <div id="switchKnob" class="w-8 h-8 ml-1 bg-emerald-800 rounded-full transition-transform duration-300 transform"></div>
+                            </div>
+                          </label>
+                        </div>
+                        <span class="text-xl my-6 font-medium text-center">Dyslexic-friendly font</span>
+                      </div>
+                  
+                      <div class="flex flex-col items-center justify-center h-full w-1/2 p-4">
+                        <div class="relative">
+                          <button 
+                            onclick="toggleDropdown()"
+                            class="flex items-center justify-between w-32 h-10 px-4 py-2 text-white rounded-full bg-aorange focus:outline-none">
+                            Medium
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <div id="dropdown" class="absolute hidden w-32 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">
+                            <ul class="py-1">
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">Small</button></li>
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">Medium</button></li>
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">Large</button></li>
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">XLarge</button></li>
+                            </ul>
+                          </div>                          
+                        </div>
+                        <span class="text-xl my-6 font-medium">Text Size</span>
+                      </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
     <!-- Chatbot -->
     <section class="fixed bottom-4 right-4">
-        <button onclick="openModal('chatModal')" class="bg-blue-500 text-white p-3 rounded-full shadow-lg">
-            💬
+        <button onclick="openModal('chatModal')" class="rounded-full shadow-lg">
+            <img src="img/bg/chatBTN.png" alt="Chatbot" class="w-24 h-24">
         </button>
         
         <div id="chatModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
             <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 relative">
                 <button onclick="closeModal('chatModal')" class="self-end text-black text-4xl font-bold">&times;</button>
-                <h1 class="text-xl font-bold text-center mb-4">InTheirShoes Chatbot</h1>
-                <div id="chatbox" class="h-96 overflow-y-auto p-2 border border-gray-300 rounded-md mb-4"></div>
-                <div class="flex">
+                <img src="img/bg/chatBTN.png" alt="Chatbot" class="mx-auto my-4 w-16 h-16">
+                <h1 class="text-xl font-bold text-center mb-4">Help Support</h1>
+                <hr class="mx-auto mt-4 mb-6 border-gray-300 w-2/3 border-1">
+                <div id="chatbox" class="h-72 overflow-y-auto p-2 mx-4 border border-gray-300 rounded-md mb-4"></div>
+                <div class="flex mx-4">
                     <input id="userInput" type="text" class="flex-1 p-2 border border-gray-300 rounded-l-md" placeholder="Type a message...">
-                    <button id="sendBtn" class="bg-blue-500 text-white px-4 py-2 rounded-r-md">Send</button>
+                    <button id="sendBtn" class="bg-aorange text-black font-bold px-4 py-2 rounded-r-md">Send</button>
                 </div>
             </div>
         </div>
@@ -189,6 +244,7 @@
             document.getElementById(modalId).classList.add('hidden');
         }
     </script>
+    <script type="module" src="js/accessibility.js"></script>
     <script type="module" src="js/chatbot.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>

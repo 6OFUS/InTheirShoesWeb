@@ -37,7 +37,7 @@ async function fetchGeminiResponse() {
 
 function appendMessage(sender, message) {
     const msgDiv = document.createElement("div");
-    msgDiv.classList.add("p-2", "rounded-md", "mb-2", sender === "user" ? "bg-blue-200" : "bg-gray-200");
+    msgDiv.classList.add("p-2", "rounded-md", "mb-2", sender === "user" ? "font-bold" : "font-medium", sender === "user" ? "bg-aorange" : "bg-gray-200");
     msgDiv.textContent = message;
     chatbox.appendChild(msgDiv);
     chatbox.scrollTop = chatbox.scrollHeight;
