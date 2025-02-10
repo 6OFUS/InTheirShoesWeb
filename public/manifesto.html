@@ -35,14 +35,22 @@
         </div>
     </div>
 
-    <img src="img/bg/5FUS_BANNER_320x320.png" 
-    srcset="
-        img/bg/5FUS_BANNER_320x320.png 320w,
-        img/bg/5FUS_BANNER_768x320.png 768w,
-        img/bg/5FUS_BANNER_1400x600.png 1400w"
-    sizes="(max-width: 767px) 320px, (max-width: 1023px) 768px, 1400px"
-    alt="Manifesto Banner"
-    class="w-full h-auto object-cover mx-auto">
+    <div class="w-full mx-auto">
+        <!-- Mobile -->
+        <img src="img/banners/320x320/manifesto.png" 
+             class="w-full h-auto object-cover block sm:hidden" 
+             alt="Manifesto Banner">
+    
+        <!-- Tablet -->
+        <img src="img/banners/768x320/manifesto.png" 
+             class="w-full h-auto object-cover hidden sm:block md:hidden" 
+             alt="Manifesto Banner">
+    
+        <!-- Desktop -->
+        <img src="img/banners/1400x600/manifesto.png" 
+             class="w-full h-auto object-cover hidden md:block" 
+             alt="Manifesto Banner">
+    </div>    
 
     <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
         <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/manifesto.html" class="text-black hover:text-apink">Manifesto</a>

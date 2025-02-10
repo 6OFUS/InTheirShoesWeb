@@ -35,7 +35,22 @@
         </div>
     </div>
     
-    <img src="img/bg/support.png" alt="5OFUS Banner" class="flex h-2/3 aspect-auto w-full">
+    <div class="w-full mx-auto">
+        <!-- Mobile -->
+        <img src="img/banners/320x320/support.png" 
+             class="w-full h-auto object-cover block sm:hidden" 
+             alt="Support Banner">
+    
+        <!-- Tablet -->
+        <img src="img/banners/768x320/support.png" 
+             class="w-full h-auto object-cover hidden sm:block md:hidden" 
+             alt="Support Banner">
+    
+        <!-- Desktop -->
+        <img src="img/banners/1400x600/support.png" 
+             class="w-full h-auto object-cover hidden md:block" 
+             alt="Support Banner">
+    </div>  
 
     <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
         <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/support.html" class="text-black hover:text-apink">Support</a>
