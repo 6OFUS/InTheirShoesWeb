@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Dyslexia</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head> 
+<body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center">
+    <div class="flex bg-white shadow-md h-32 w-full">
+        <div class="w-11/12 mx-auto flex justify-between items-center">
+            <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
+                <img class="w-32 h-32" src="./img/branding/logo.png" alt="Logo">
+                <div class="flex flex-col bg-yellow-500 font-garet font-bold px-5 py-5 rounded-2xl shadow-lg">
+                    <h1 class="text-sm text-emerald-800">Disability is not a barrier. <br>Discrimination is.</h1>
+                </div>
+            </a>
+            <nav class="flex font-garet space-x-4 text-2xl items-center">
+                <a href="/about.html" class="text-black hover:text-apink">About</a>
+                <a href="/support.html" class="text-black hover:text-apink">Support</a>
+                <a href="/contact.html" class="text-black hover:text-apink">Contact Us</a>
+                <div class="flex space-x-4 font-bold items-center">
+                    <a href="/donate.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Donate</a>
+                    <a href="/auth.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="w-full mx-auto">
+        <!-- Mobile -->
+        <img src="img/banners/320x320/dyslexia.png" 
+             class="w-full h-auto object-cover block sm:hidden" 
+             alt="Dyslexia Banner">
+    
+        <!-- Tablet -->
+        <img src="img/banners/768x320/dyslexia.png" 
+             class="w-full h-auto object-cover hidden sm:block md:hidden" 
+             alt="Dyslexia Banner">
+    
+        <!-- Desktop -->
+        <img src="img/banners/1400x600/dyslexia.png" 
+             class="w-full h-auto object-cover hidden md:block" 
+             alt="Dyslexia Banner">
+    </div>    
+
+    <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
+        <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/dyslexia.html" class="text-black hover:text-apink">Dyslexia</a>
+    </div>
+ 
+    <div class="bg-[url('img/bg/bkgdweb.png')] bg-center bg-no-repeat bg-contain py-28 flex flex-col items-center justify-center mb-48 mt-32" data-aos="fade-up">
+        <section class="flex py-28 w-5/6 justify-center items-center">
+            <div class="container mx-auto text-start px-24 w-1/2">
+                <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Introduction</h2>
+                <hr class="my-5 border-1 border-black w-1/5">
+                <p class="text-lg text-gray-700 font-bold">
+                    Dyslexia is a common learning difficulty that primarily affects reading, spelling, and writing abilities. People with dyslexia may have trouble recognizing words, decoding text, and processing written language despite having normal intelligence and vision. It’s important to understand that dyslexia is not a reflection of intelligence but rather a neurological condition that requires specific support for learning.
+                </p>
+            </div>
+            <img src="img/dyslexic/image.png" class="w-1/2 h-80 px-16 mb-4 rounded-lg object-contain">
+        </section>
+    
+        <section class="flex my-12 w-11/12 justify-center items-center">
+            <img src="img/dyslexic/image-1.png" class="w-1/2 h-80 px-16 mb-4 rounded-lg object-contain">
+            <div class="container mx-auto text-start px-24 w-1/2">
+                <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Causes of Dyslexia</h2>
+                <hr class="my-5 border-1 border-black w-1/6">
+                <ul class="list-disc pl-5 text-lg text-gray-700">
+                    <li><strong>Genetics</strong></li>
+                    <li><strong>Brain Structure and Function</strong></li>
+                    <li><strong>Premature Birth or Low Birth Weight</strong></li>
+                    <li><strong>Environmental Factors</strong></li>
+                </ul>                
+            </div>
+        </section>
+    </div>
+
+    <div class="bg-[url('img/bg/bkgdweb.png')] bg-center bg-no-repeat bg-contain w-full flex items-center justify-center py-28 mb-48" data-aos="fade-up">
+        <div class="w-full max-w-5xl flex flex-col">
+            <h1 class="text-pblack text-2xl font-bold font-garet mb-20">Causes of Dyslexia</h1>
+            <div class="grid md:grid-cols-2 gap-40 self-center">
+                <!-- Genetics Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-2.png" alt="Genetics" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Genetics</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">Dyslexia often runs in families, suggesting a genetic link. Children with a family history of dyslexia are at higher risk.</p>
+                    </div>
+                </div>
+                
+                <!-- Brain Structure and Function Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-5.png" alt="Brain Structure" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Brain Structure and Function</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">Differences in how certain parts of the brain work together for reading and language processing can contribute to dyslexia.</p>
+                    </div>
+                </div>
+                
+                <!-- Premature Birth or Low Birth Weight Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-3.png" alt="Premature Birth" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Premature Birth or Low Birth Weight</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">Babies born prematurely or with low birth weight may have a higher chance of developing learning disabilities like dyslexia.</p>
+                    </div>
+                </div>
+                
+                <!-- Environmental Factors Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-4.png" alt="Environmental Factors" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Environmental Factors</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">Limited exposure to language or poor teaching methods may exacerbate the challenges for those with a predisposition to dyslexia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-[url('img/bg/bkgdweb.png')] bg-center bg-no-repeat bg-contain py-28 flex flex-col items-center justify-center w-screen py-48 mb-48" data-aos="fade-up">
+        <section class="flex my-12 w-11/12 justify-center items-center">
+            <img src="img/dyslexic/image-13.png" class="w-1/2 h-80 px-16 mb-4 rounded-lg object-contain">
+            <div class="container mx-auto text-start px-24 w-1/2">
+                <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Types of Dyslexia</h2>
+                <hr class="my-5 border-1 border-black w-1/6">
+                <ul class="list-disc pl-5 text-lg text-gray-700">
+                    <li><strong>Phonological Dyslexia</strong></li>
+                    <li><strong>Surface Dyslexia</strong></li>
+                    <li><strong>Rapid Naming Dyslexia</strong></li>
+                    <li><strong>Double Deficit Dyslexia</strong></li>
+                </ul>                
+            </div>
+        </section>
+    </div>
+
+    <div class="bg-[url('img/bg/bkgdweb.png')] bg-center bg-no-repeat bg-contain w-full flex items-center justify-center py-28 mb-48" data-aos="fade-up">
+        <div class="w-full max-w-5xl flex flex-col">
+            <h1 class="text-pblack text-2xl font-bold font-garet mb-20">Types of Dyslexia</h1>
+            <div class="grid md:grid-cols-2 gap-40 self-center">
+                <!-- Phonological Dyslexia Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-6.png" alt="Phonological Dyslexia" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Phonological Dyslexia</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">A difficulty with recognizing and manipulating sounds in speech, which impacts the ability to decode words.</p>
+                    </div>
+                </div>
+                
+                <!-- Surface Dyslexia Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-14.png" alt="Surface Dyslexia" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Surface Dyslexia</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">A difficulty in recognizing words by sight, leading to problems with spelling and word retrieval.</p>
+                    </div>
+                </div>
+                
+                <!-- Rapid Naming Dyslexia Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-7.png" alt="Rapid Naming Dyslexia" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Rapid Naming Dyslexia</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">A challenge with quickly recalling names of familiar objects or colors, affecting reading fluency.</p>
+                    </div>
+                </div>
+                
+                <!-- Double Deficit Dyslexia Card -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden w-11/12 md:w-full">
+                    <img src="img/dyslexic/image-8.png" alt="Double Deficit Dyslexia" class="w-full h-40 object-cover">
+                    <div class="p-12">
+                        <h2 class="text-lg font-semibold text-pblack font-garet">Double Deficit Dyslexia</h2>
+                        <hr class="my-8 border-1 border-black w-1/6">
+                        <p class="text-pblack text-md mt-2 font-grotesk font-bold">A combination of phonological and rapid naming issues, resulting in more severe challenges in reading and writing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center rounded-lg shadow-lg w-11/12 bg-gray-200 p-16 w-11/12 m-24 font-bold">
+        <h1 class="text-center text-4xl font-garet font-bold text-pblack mb-8">Challenges Faced & Solutions</h1>
+        <hr class="self-center align-center border-t-2 border-black w-24">
+        
+        <div class="grid grid-cols-4 gap-4 my-16 items-start flex justify-center items-center w-11/12" data-aos="fade-left">
+            <img src="img/dyslexic/image-9.png" class="h-5/6 object-contain">
+            <div class="col-span-3">
+                <h2 class="text-2xl font-bold text-pblack font-garet my-12">Difficulty with Reading and Spelling</h2>
+                <p class="text-lg mt-2 font-grotesk"><span class="font-bold">Challenge:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Trouble decoding words, leading to slow or inaccurate reading</li>
+                        <li>Frequent spelling mistakes due to difficulty with word structure and patterns</li>
+                    </ul>
+                </p>
+                <p class="text-lg mt-3 font-grotesk"><span class="font-bold">Solution:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Use phonics-based learning strategies that focus on sound-letter relationships</li>
+                        <li>Encourage reading aloud, using tools like text-to-speech software to assist with comprehension</li>
+                        <li>Provide extra time for reading and writing tasks</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-4 gap-4 my-16 items-start flex justify-center items-center w-11/12" data-aos="fade-left">
+            <img src="img/dyslexic/image-10.png" class="h-5/6 object-contain">
+            <div class="col-span-3">
+                <h2 class="text-2xl font-bold text-pblack font-garet my-12">Poor Handwriting and Written Expression</h2>
+                <p class="text-lg mt-2 font-grotesk"><span class="font-bold">Challenge:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Difficulty organizing thoughts on paper and poor handwriting legibility</li>
+                        <li>Struggles with written assignments or note-taking</li>
+                    </ul>
+                </p>
+                <p class="text-lg mt-3 font-grotesk"><span class="font-bold">Solution:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Offer alternative formats for assignments (e.g., audio recordings, oral presentations)</li>
+                        <li>Allow for the use of technology like speech-to-text software or dictation tools</li>
+                        <li>Break assignments into smaller, manageable steps</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-4 gap-4 my-16 items-start flex justify-center items-center w-11/12" data-aos="fade-left">
+            <img src="img/dyslexic/image-11.png" class="h-5/6 object-contain">
+            <div class="col-span-3">
+                <h2 class="text-2xl font-bold text-pblack font-garet my-12">Low Self-Esteem and Anxiety</h2>
+                <p class="text-lg mt-2 font-grotesk"><span class="font-bold">Challenge:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Feelings of frustration, embarrassment, or shame due to academic struggles</li>
+                        <li>Increased anxiety in classroom or testing environments</li>
+                    </ul>
+                </p>
+                <p class="text-lg mt-3 font-grotesk"><span class="font-bold">Solution:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Promote a growth mindset that emphasizes effort over innate ability</li>
+                        <li>Create a supportive and understanding classroom environment</li>
+                        <li>Encourage regular breaks to reduce stress and fatigue</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-4 gap-4 my-16 items-start flex justify-center items-center w-11/12" data-aos="fade-left">
+            <img src="img/dyslexic/image-12.png" class="h-5/6 object-contain">
+            <div class="col-span-3">
+                <h2 class="text-2xl font-bold text-pblack font-garet my-12">Social and Emotional Impact</h2>
+                <p class="text-lg mt-2 font-grotesk"><span class="font-bold">Challenge:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Struggles with reading comprehension can lead to difficulties keeping up with peers in social settings</li>
+                        <li>Feelings of isolation or frustration when unable to express oneself effectively</li>
+                    </ul>
+                </p>
+                <p class="text-lg mt-3 font-grotesk"><span class="font-bold">Solution:</span><br>
+                    <ul class="list-disc ml-6">
+                        <li>Support social groups and open dialogue about learning differences</li>
+                        <li>Encourage positive reinforcement and celebrate progress, no matter how small</li>
+                        <li>Offer social skills training to help children with dyslexia navigate peer interactions</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+    </div>    
+
+    <!-- Footer -->
+    <footer class="flex bg-yellow-500 text-black justify-center font-bold text-xl w-full">
+        <div class="w-11/12 p-6 flex justify-between">
+            <p>&copy; 2025 InTheirShoes. All Rights Reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-agreen">Privacy Policy</a>
+                <a href="#" class="hover:text-agreen">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // AOS
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out',
+            once: false,
+        });
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+</body>
+</html>
