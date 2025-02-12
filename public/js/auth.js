@@ -44,7 +44,7 @@ export async function signUp(email, password) {
 
   const user = data.user;
   if (user) {
-    window.location.href = "/public/dashboard.html"; // change in prod
+    window.location.href = "/dashboard.html"; // change in prod
   } else {
     throw new Error("Signup failed. Please try again.");
   }
@@ -68,7 +68,7 @@ export async function logInGoogle() {
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/public/dashboard.html`, // change in prod
+        redirectTo: `${window.location.origin}/dashboard.html`,
       },
     });
     

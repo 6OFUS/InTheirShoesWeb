@@ -14,11 +14,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-pgrey">
-  <div class="relative flex w-[60vw] h-[60vh]">
+<body class="relative flex items-center justify-center min-h-screen bg-white md:bg-pgrey">
+  <!-- Back Button -->
+  <a href="/" class="absolute top-6 left-6 bg-white text-black md:px-4 md:py-2 px-6 py-4 md:text-xl text-3xl rounded-lg md:shadow-md shadow-0 hover:bg-gray-200 transition">
+    &larr;
+  </a>
+  
+  <div class="relative flex w-full md:w-[60vw] h-[60vh]">
     <!-- Left Rectangle -->
-    <div class="w-[47%] h-full bg-white rounded-l-2xl shadow-lg flex flex-col" data-aos="fade-left">
-        <div class="absolute w-14 bg-white rounded-2xl">
+    <div class="lg:w-[47%] w-full h-full bg-white rounded-l-2xl md:rounded-2xl shadow-0 md:shadow-lg flex flex-col" data-aos="fade-left">
+        <div class="absolute w-24 h-24 bg-white rounded-2xl hidden xl:block">
           <div class="w-full m-8 flex items-center">
             <img src="img/branding/logo.png" alt="In Their Shoes Logo" class="w-32">
           </div>
@@ -50,53 +55,10 @@
             </div>
           </div>
         </div>
-
-        <!-- Signup Form Section -->
-        <div id="signup-section" class="hidden flex items-center justify-center h-full">
-            <div class="bg-white p-8 max-w-sm w-full">
-              <h1 class="text-center text-2xl text-emerald-900 font-semibold mb-6">Get Started with InTheirShoes</h1>
-        
-              <button id="signup-google" class="flex flex-col items-center justify-center w-full py-2 px-4 border border-black rounded-lg text-black hover:bg-gray-100 mb-4">
-                <div class="h-1/6 w-full my-1"><i class="fa-brands fa-google mx-2"></i>
-                Continue with Google</div>
-              </button>
-        
-              <div class="text-center text-gray-500 my-4">or</div>
-        
-              <form id="signup-form">
-                <input id="signup-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-                <input id="signup-password" type="password" placeholder="Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-                <input id="signup-confirm-password" type="password" placeholder="Confirm Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-                <h1 id="signup-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
-                <button type="submit" class="w-full bg-black text-white py-2 px-4 my-4 rounded-lg hover:bg-gray-800">Continue</button>
-              </form>
-      
-              <div class="text-center mt-8 text-gray-500">
-                Been here before? <a id="show-login" href="#" class="text-blue-500 hover:underline">Login</a>
-              </div>
-            </div>
-        </div>
-
-        <!-- Reset Password Form Section -->
-        <div id="reset-section" class="hidden flex items-center justify-center h-full">
-            <div class="bg-white p-8 max-w-md w-full">
-              <h1 class="text-center text-3xl text-emerald-900 font-semibold mb-6">Enter your email to reset password</h1>
-        
-              <form id="reset-password-form">
-                <input id="reset-password-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
-                <h1 id="reset-password-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
-                <button type="submit" class="w-full bg-black text-white py-3 px-4 my-4 rounded-lg hover:bg-gray-800">Reset Password</button>
-              </form>
-      
-              <div class="text-center mt-8 text-gray-500">
-                <a id="cancel-reset" href="#" class="text-blue-500 hover:underline">Cancel</a>
-              </div>
-            </div>
-        </div>
     </div>
 
     <!-- Right Rectangle -->
-    <div class="absolute w-[55%] h-full bg-pcyan rounded-2xl shadow-lg right-0 top-0 flex flex-col justify-center items-center bg-[url('img/bg/authbg.png')] bg-center bg-cover bg-no-repeat">
+    <div class="absolute w-[55%] h-full bg-pcyan rounded-2xl shadow-lg right-0 top-0 lg:flex hidden flex-col justify-center items-center bg-[url('img/bg/authbg.png')] bg-center bg-cover bg-no-repeat">
     </div>
   </div>
   <script>
