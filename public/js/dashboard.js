@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "SHOP / SKINS": "shop-content",
         "PHOTO GALLERY": "gallery-content",
         "STATISTICS": "statistics-content",
-        "SETTINGS": "settings-content"
+        "ACHIEVEMENTS": "achievements-content"
     };
 
     const navLinks = document.querySelectorAll("nav ul li a");
