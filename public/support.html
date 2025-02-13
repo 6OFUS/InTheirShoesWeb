@@ -15,23 +15,39 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center">
-    <div class="flex bg-white shadow-md h-32 w-full">
+    <div class="flex bg-white shadow-md h-32 w-full relative">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
                 <img class="w-32 h-32" src="./img/branding/logo.png" alt="Logo">
-                <div class="flex flex-col bg-yellow-500 font-garet font-bold px-5 py-5 rounded-2xl shadow-lg">
-                    <h1 class="text-sm text-emerald-800">Disability is not a barrier. <br>Discrimination is.</h1>
+                <div class="hidden lg:flex flex-col bg-yellow-500 font-garet font-bold lg:p-5 p-2 rounded-2xl shadow-lg">
+                    <h1 class="lg:text-sm text-xs text-emerald-800">Disability is not a barrier. <br>Discrimination is.</h1>
                 </div>
             </a>
-            <nav class="flex font-garet space-x-4 text-2xl items-center">
-                <a href="/about.html" class="text-black hover:text-apink">About</a>
-                <a href="/support.html" class="text-black hover:text-apink underline">Support</a>
+            
+            <!-- Hamburger Menu -->
+            <button id="menu-toggle" class="md:hidden text-black text-3xl focus:outline-none">
+                &#9776;
+            </button>
+            
+            <!-- Links -->
+            <nav class="hidden md:flex font-garet space-x-4 xl:text-xl text-lg items-center">
+                <a href="/about.html" class="text-black hover:text-apink underline">About</a>
+                <a href="/support.html" class="text-black hover:text-apink">Support</a>
                 <a href="/contact.html" class="text-black hover:text-apink">Contact Us</a>
                 <div class="flex space-x-4 font-bold items-center">
                     <a href="/donate.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Donate</a>
                     <a href="/auth.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Get Started</a>
                 </div>
             </nav>
+        </div>
+
+        <!-- Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md py-4 flex flex-col items-center md:hidden">
+            <a href="/about.html" class="text-black hover:text-apink text-xl py-2">About</a>
+            <a href="/support.html" class="text-black hover:text-apink text-xl py-2">Support</a>
+            <a href="/contact.html" class="text-black hover:text-apink text-xl py-2">Contact Us</a>
+            <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
+            <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
         </div>
     </div>
     
@@ -86,25 +102,108 @@
         </div>
         <img src="img/bg/teambanner.png" alt="5OFUS Banner" class="h-64 mx-8 mb-4 rounded-full">
     </section>
+
+    <!-- Accessibility -->
+    <section class="fixed bottom-32 right-4">
+        <button onclick="openModal('accessibilityModal')" class="rounded-full shadow-lg">
+            <img src="img/bg/settingBTN.png" alt="Chatbot" class="w-24 h-24">
+        </button>
+        
+        <div id="accessibilityModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+            <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 relative">
+                <button onclick="closeModal('accessibilityModal')" class="self-end text-black text-4xl font-bold">&times;</button>
+                <img src="img/bg/settingBTN.png" alt="Chatbot" class="mx-auto my-4 w-16 h-16">
+                <h1 class="text-xl font-bold text-center mb-4">Accessibility Settings</h1>
+                <hr class="mx-auto mt-4 mb-6 border-gray-300 w-2/3 border-1">
+                <section class="flex items-center justify-center h-full my-20 p-4">
+                    <div class="flex w-full h-full bg-white rounded-lg">
+                      <div class="flex flex-col items-center justify-center w-1/2 h-full border-r border-gray-300 p-4">
+                        <div class="flex items-center space-x-2">
+                          <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="dyslexicSwitch" class="sr-only peer" onclick="toggleSwitch()">
+                            <div class="w-20 h-10 bg-aorange rounded-full peer flex items-center">
+                              <div id="switchKnob" class="w-8 h-8 ml-1 bg-emerald-800 rounded-full transition-transform duration-300 transform"></div>
+                            </div>
+                          </label>
+                        </div>
+                        <span class="text-xl my-6 font-medium text-center">Dyslexic-friendly font</span>
+                      </div>
+                  
+                      <div class="flex flex-col items-center justify-center h-full w-1/2 p-4">
+                        <div class="relative">
+                          <button 
+                            onclick="toggleDropdown()"
+                            class="flex items-center justify-between w-32 h-10 px-4 py-2 text-white rounded-full bg-aorange focus:outline-none">
+                            Medium
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                          </button>
+                          <div id="dropdown" class="absolute hidden w-32 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg">
+                            <ul class="py-1">
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">Small</button></li>
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">Medium</button></li>
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">Large</button></li>
+                              <li><button class="block w-full px-4 py-2 text-left hover:bg-gray-100">XLarge</button></li>
+                            </ul>
+                          </div>                          
+                        </div>
+                        <span class="text-xl my-6 font-medium">Text Size</span>
+                      </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <section class="fixed bottom-4 right-4">
+        <button onclick="openModal('chatModal')" class="rounded-full shadow-lg">
+            <img src="img/bg/chatBTN.png" alt="Chatbot" class="w-24 h-24">
+        </button>
+        
+        <div id="chatModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+            <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 relative">
+                <button onclick="closeModal('chatModal')" class="self-end text-black text-4xl font-bold">&times;</button>
+                <img src="img/bg/chatBTN.png" alt="Chatbot" class="mx-auto my-4 w-16 h-16">
+                <h1 class="text-xl font-bold text-center mb-4">Help Support</h1>
+                <hr class="mx-auto mt-4 mb-6 border-gray-300 w-2/3 border-1">
+                <div id="chatbox" class="h-72 overflow-y-auto p-2 mx-4 border border-gray-300 rounded-md mb-4"></div>
+                <div class="flex mx-4">
+                    <input id="userInput" type="text" class="flex-1 p-2 border border-gray-300 rounded-l-md" placeholder="Type a message...">
+                    <button id="sendBtn" class="bg-aorange text-black font-bold px-4 py-2 rounded-r-md">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Footer -->
-    <footer class="flex w-full bg-yellow-500 text-black justify-center font-bold text-xl">
-        <div class="w-11/12 p-6 flex justify-between">
+    <footer class="flex w-full bg-yellow-500 text-black justify-center font-bold md:text-xl text-lg">
+        <div class="w-11/12 p-6 flex md:flex-row flex-col justify-between">
             <p>&copy; 2025 InTheirShoes. All Rights Reserved.</p>
-            <div class="space-x-4">
+            <div class="flex space-x-4 justify-between">
                 <a href="#" class="hover:text-agreen">Privacy Policy</a>
                 <a href="#" class="hover:text-agreen">Terms of Service</a>
             </div>
         </div>
     </footer>
     <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+    
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
         // AOS
         AOS.init({
             duration: 1200,
             easing: 'ease-in-out',
-            once: true,
+            once: false,
         });
     </script>
+    <script type="module" src="js/accessibility.js"></script>
+    <script type="module" src="js/chatbot.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
     <script src="tailwind.config.js"></script>
