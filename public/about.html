@@ -14,15 +14,22 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center">
-    <div class="flex bg-white shadow-md h-32 w-full">
+    <div class="flex bg-white shadow-md h-32 w-full relative">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
                 <img class="w-32 h-32" src="./img/branding/logo.png" alt="Logo">
-                <div class="flex flex-col bg-yellow-500 font-garet font-bold px-5 py-5 rounded-2xl shadow-lg">
-                    <h1 class="text-sm text-emerald-800">Disability is not a barrier. <br>Discrimination is.</h1>
+                <div class="hidden lg:flex flex-col bg-yellow-500 font-garet font-bold lg:p-5 p-2 rounded-2xl shadow-lg">
+                    <h1 class="lg:text-sm text-xs text-emerald-800">Disability is not a barrier. <br>Discrimination is.</h1>
                 </div>
             </a>
-            <nav class="flex font-garet space-x-4 text-2xl items-center">
+            
+            <!-- Hamburger Menu Button -->
+            <button id="menu-toggle" class="md:hidden text-black text-3xl focus:outline-none">
+                &#9776;
+            </button>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex font-garet space-x-4 xl:text-2xl lg:text-lg text-md items-center">
                 <a href="/about.html" class="text-black hover:text-apink underline">About</a>
                 <a href="/support.html" class="text-black hover:text-apink">Support</a>
                 <a href="/contact.html" class="text-black hover:text-apink">Contact Us</a>
@@ -32,8 +39,17 @@
                 </div>
             </nav>
         </div>
+    
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md py-4 flex flex-col items-center md:hidden">
+            <a href="/about.html" class="text-black hover:text-apink text-xl py-2">About</a>
+            <a href="/support.html" class="text-black hover:text-apink text-xl py-2">Support</a>
+            <a href="/contact.html" class="text-black hover:text-apink text-xl py-2">Contact Us</a>
+            <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
+            <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
+        </div>
     </div>
-
+    
     <div class="w-full mx-auto">
         <!-- Mobile -->
         <img src="img/banners/320x320/about.png" 
@@ -56,41 +72,41 @@
     </div>
 
     <!-- Mission Section -->
-    <section class="font-garet flex py-16 bg-white w-3/4 justify-center items-center" data-aos="fade-up">
-        <div class="container mx-auto text-start px-24">
+    <section class="font-garet flex flex-col lg:flex-row py-16 bg-white w-3/4 justify-center items-center" data-aos="fade-up">
+        <div class="container mx-auto text-start px-12">
             <h2 class="text-3xl font-bold text-emerald-900 mb-6">Mission</h2>
             <hr class="my-8 border-1 border-black w-1/5">
             <p class="font-grotesk text-lg text-gray-700 font-bold">
                 Our mission is to create immersive VR experiences that raise awareness about disabilities, fostering empathy and reducing discrimination. Through our combined skills and creativity, we aim to educate, inspire, and challenge societal barriers.
             </p>
         </div>
-        <img src="img/bg/teambanner.png" alt="5OFUS Banner" class="h-64 mx-8 mb-4 rounded-full">
+        <img src="img/bg/teambanner.png" alt="5OFUS Banner" class="xl:h-64 h-48 mx-8 mb-4 rounded-full object-contain">
     </section>
 
-    <!-- Core Values Section -->
+   <!-- Core Values Section -->
     <section class="py-16 bg-blue-50 w-full">
-        <div class="flex flex-col justify-center items-center container mx-auto text-center">
+        <div class="flex flex-col justify-center items-center container mx-auto text-center px-4">
             <h2 class="text-4xl font-bold text-green-900 font-garet">Core Values</h2>
-            <hr class="h-px my-10 border-1 border-black w-14">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 px-8">
-                <div class="bg-yellow-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
-                    <i class="fa-solid fa-heart text-yellow-700 text-7xl p-12"></i>
+            <hr class="h-px my-6 border-1 border-black w-14">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-yellow-100 p-4 rounded-lg shadow-md flex flex-col items-center" data-aos="zoom-in" data-aos-duration="500">
+                    <i class="fa-solid fa-heart text-yellow-700 text-6xl p-8"></i>
                     <p class="text-lg font-semibold text-yellow-700">Empathy</p>
                 </div>
-                <div class="bg-gray-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
-                    <i class="fa-solid fa-users text-gray-700 text-7xl p-12"></i>
+                <div class="bg-gray-100 p-4 rounded-lg shadow-md flex flex-col items-center" data-aos="zoom-in" data-aos-duration="500">
+                    <i class="fa-solid fa-users text-gray-700 text-6xl p-8"></i>
                     <p class="text-lg font-semibold text-gray-700">Inclusivity</p>
                 </div>
-                <div class="bg-red-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
-                    <i class="fa-solid fa-handshake text-red-700 text-7xl p-12"></i>
+                <div class="bg-red-100 p-4 rounded-lg shadow-md flex flex-col items-center" data-aos="zoom-in" data-aos-duration="500">
+                    <i class="fa-solid fa-handshake text-red-700 text-6xl p-8"></i>
                     <p class="text-lg font-semibold text-red-700">Respect</p>
                 </div>
-                <div class="bg-blue-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
-                    <i class="fa-solid fa-school text-emerald-900 text-7xl p-12"></i>
+                <div class="bg-blue-100 p-4 rounded-lg shadow-md flex flex-col items-center" data-aos="zoom-in" data-aos-duration="500">
+                    <i class="fa-solid fa-school text-emerald-900 text-6xl p-8"></i>
                     <p class="text-lg font-semibold text-emerald-900">Education</p>
                 </div>
-                <div class="bg-green-100 p-4 rounded-lg shadow-md" data-aos="zoom-in" data-aos-duration="500">
-                    <i class="fa-solid fa-thumbs-up text-green-700 text-7xl p-12"></i>
+                <div class="bg-green-100 p-4 rounded-lg shadow-md flex flex-col items-center" data-aos="zoom-in" data-aos-duration="500">
+                    <i class="fa-solid fa-thumbs-up text-green-700 text-6xl p-8"></i>
                     <p class="text-lg font-semibold text-green-700">Social Good</p>
                 </div>
             </div>
@@ -99,54 +115,57 @@
 
     <!-- Team Section -->
     <section class="py-16 bg-gray-200 w-full">
-        <div class="flex flex-col container mx-auto justify-center items-center" data-aos="fade-right">
+        <div class="flex flex-col container mx-auto justify-center items-center px-4" data-aos="fade-right">
             <h2 class="text-4xl font-bold font-garet text-emerald-900">Meet the Team</h2>
-            <hr class="h-px my-10 border-1 border-black w-14">
-            <div class="w-full sm:w-3/4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 px-8">
-                <img src="img/characters/al.png" alt="Leader" class="mb-4 rounded-full">
-                <img src="img/characters/hh.png" alt="Leader" class="mb-4 rounded-full">
-                <img src="img/characters/mal.png" alt="Leader" class="mb-4 rounded-full">
-                <img src="img/characters/jen.png" alt="Leader" class="mb-4 rounded-full">
-                <img src="img/characters/ke.png" alt="Leader" class="mb-4 rounded-full">
+            <hr class="h-px my-6 border-1 border-black w-14">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 w-1/2 px-4">
+                <img src="img/characters/al.png" alt="Leader" class="mb-4 rounded-full w-full max-w-[140px] mx-auto">
+                <img src="img/characters/hh.png" alt="Art Director" class="mb-4 rounded-full w-full max-w-[140px] mx-auto">
+                <img src="img/characters/mal.png" alt="Lead 3D Designer" class="mb-4 rounded-full w-full max-w-[140px] mx-auto">
+                <img src="img/characters/jen.png" alt="3D Designer" class="mb-4 rounded-full w-full max-w-[140px] mx-auto">
+                <img src="img/characters/ke.png" alt="Game Developer" class="mb-4 rounded-full w-full max-w-[140px] mx-auto">
             </div>
-            <div class="flex space-x-16 mt-12 justify-center items-center">
-                <p class="w-full sm:w-1/3">Join us on our journey to challenge societal barriers and promote empathy! Follow us on Instagram and TikTok @5fiveofus for updates, stories, and behind-the-scenes content.</p>
-                <a href="www.instagram.com/5fiveofus"><i class="fa-brands fa-instagram text-5xl"></i></a>
-                <a href="www.tiktok.com/@5fiveofus"><i class="fa-brands fa-tiktok text-5xl"></i></a>
+            <div class="flex flex-col sm:flex-row items-center justify-center mt-8 space-y-4 sm:space-y-0 sm:space-x-6">
+                <p class="w-full sm:w-2/3 text-center">Join us on our journey to challenge societal barriers and promote empathy! Follow us on Instagram and TikTok @5fiveofus for updates, stories, and behind-the-scenes content.</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.instagram.com/5fiveofus"><i class="fa-brands fa-instagram text-4xl"></i></a>
+                    <a href="https://www.tiktok.com/@5fiveofus"><i class="fa-brands fa-tiktok text-4xl"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Team Profiles Section -->
     <section class="py-16 bg-white">
-        <div class="container mx-auto text-center">
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 px-6" data-aos="fade-up">
+        <div class="container mx-auto text-center px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" data-aos="fade-up">
                 <!-- Leader -->
-                <div onclick="openModal('leader-modal')" class="bg-blue-100 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/characters/al.png" alt="Leader" class="mx-auto mb-4 rounded-full">
+                <div onclick="openModal('leader-modal')" class="bg-blue-100 px-6 py-16 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
+                    <img src="img/characters/al.png" alt="Leader" class="mx-auto mb-4 rounded-full w-48 h-48 object-cover">
                     <h3 class="text-xl font-bold text-emerald-900">Alfred Kang Jing Rui</h3>
                     <p class="text-gray-700">Leader, Lead Developer</p>
                 </div>
                 <!-- Art Director -->
-                <div onclick="openModal('art-director-modal')" class="bg-blue-50 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/characters/hh.png" alt="Art Director" class="mx-auto mb-4 rounded-full">
+                <div onclick="openModal('art-director-modal')" class="bg-blue-50 px-6 py-16 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
+                    <img src="img/characters/hh.png" alt="Art Director" class="mx-auto mb-4 rounded-full w-48 h-48 object-cover">
                     <h3 class="text-xl font-bold text-emerald-900">Looi Hui Hui</h3>
                     <p class="text-gray-700">Art Director</p>
                 </div>
                 <!-- Lead 3D Designer -->
-                <div onclick="openModal('designer-modal')" class="bg-blue-100 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/characters/mal.png" alt="Lead 3D Designer" class="mx-auto mb-4 rounded-full">
+                <div onclick="openModal('designer-modal')" class="bg-blue-100 px-6 py-16 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
+                    <img src="img/characters/mal.png" alt="Lead 3D Designer" class="mx-auto mb-4 rounded-full w-48 h-48 object-cover">
                     <h3 class="text-xl font-bold text-emerald-900">Malcom Goh Beng Hong</h3>
                     <p class="text-gray-700">Lead 3D Designer</p>
                 </div>
                 <!-- 3D Designer -->
-                <div onclick="openModal('3d-designer-modal')" class="bg-blue-50 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/characters/jen.png" alt="3D Designer" class="mx-auto mb-4 rounded-full">
+                <div onclick="openModal('3d-designer-modal')" class="bg-blue-50 px-6 py-16 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
+                    <img src="img/characters/jen.png" alt="3D Designer" class="mx-auto mb-4 rounded-full w-48 h-48 object-cover">
                     <h3 class="text-xl font-bold text-emerald-900">Lau Mei Ying Jennifer</h3>
                     <p class="text-gray-700">3D Designer</p>
                 </div>
                 <!-- Game Developer -->
-                <div onclick="openModal('developer-modal')" class="bg-blue-100 px-6 py-10 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/characters/ke.png" alt="Game Developer" class="mx-auto mb-4 rounded-full">
+                <div onclick="openModal('developer-modal')" class="bg-blue-100 px-6 py-16 rounded-lg shadow-md hover:shadow-lg transition transform hover:-translate-y-1 cursor-pointer">
+                    <img src="img/characters/ke.png" alt="Game Developer" class="mx-auto mb-4 rounded-full w-48 h-48 object-cover">
                     <h3 class="text-xl font-bold text-emerald-900">Kevin Heng Wei Jian</h3>
                     <p class="text-gray-700">Game Developer</p>
                 </div>
@@ -423,10 +442,10 @@
     </section>
     
     <!-- Footer -->
-    <footer class="flex w-full bg-yellow-500 text-black justify-center font-bold text-xl">
-        <div class="w-11/12 p-6 flex justify-between">
+    <footer class="flex w-full bg-yellow-500 text-black justify-center font-bold md:text-xl text-lg">
+        <div class="w-11/12 p-6 flex md:flex-row flex-col justify-between">
             <p>&copy; 2025 InTheirShoes. All Rights Reserved.</p>
-            <div class="space-x-4">
+            <div class="flex space-x-4 justify-between">
                 <a href="#" class="hover:text-agreen">Privacy Policy</a>
                 <a href="#" class="hover:text-agreen">Terms of Service</a>
             </div>
@@ -448,6 +467,12 @@
         function closeModal(modalId) {
             document.getElementById(modalId).classList.add('hidden');
         }
+
+        // mobile nav
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
