@@ -167,6 +167,12 @@
         function closeModal(modalId) {
             document.getElementById(modalId).classList.add('hidden');
         }
+
+        // mobile nav
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
     </script>
     <script type="module" src="js/accessibility.js"></script>
     <script type="module" src="js/chatbot.js"></script>
