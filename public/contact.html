@@ -17,7 +17,7 @@
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center 
   bg-[url('img/banners/320x320/contact.png')] sm:bg-[url('img/banners/768x320/contact.png')] 
   md:bg-[url('img/banners/1400x600/contact.png')] 
-  bg-center bg-no-repeat bg-contain">
+  bg-center bg-no-repeat bg-contain overflow-x-hidden">
     <div class="flex bg-white shadow-md h-32 w-full relative">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
@@ -34,9 +34,9 @@
             
             <!-- Links -->
             <nav class="hidden md:flex font-garet space-x-4 xl:text-xl text-lg items-center">
-                <a href="/about.html" class="text-black hover:text-apink underline">About</a>
+                <a href="/about.html" class="text-black hover:text-apink">About</a>
                 <a href="/support.html" class="text-black hover:text-apink">Support</a>
-                <a href="/contact.html" class="text-black hover:text-apink">Contact Us</a>
+                <a href="/contact.html" class="text-black hover:text-apink underline">Contact Us</a>
                 <div class="flex space-x-4 font-bold items-center">
                     <a href="/donate.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Donate</a>
                     <a href="/auth.html" class="bg-yellow-500 text-emerald-800 px-5 py-3 rounded-full hover:bg-apink">Get Started</a>
@@ -48,7 +48,7 @@
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md py-4 flex flex-col items-center md:hidden">
             <a href="/about.html" class="text-black hover:text-apink text-xl py-2">About</a>
             <a href="/support.html" class="text-black hover:text-apink text-xl py-2">Support</a>
-            <a href="/contact.html" class="text-black hover:text-apink text-xl py-2">Contact Us</a>
+            <a href="/contact.html" class="text-black hover:text-apink text-xl py-2 underline">Contact Us</a>
             <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
             <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
         </div>
@@ -180,7 +180,6 @@
         document.getElementById('menu-toggle').addEventListener('click', function() {
             var mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
-    =        console.log('tea')
         });
     </script>
     <script type="module" src="js/accessibility.js"></script>
