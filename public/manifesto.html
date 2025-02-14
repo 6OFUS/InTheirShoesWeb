@@ -51,28 +51,34 @@
         </div>
     </div>
 
-    <div class="w-full mx-auto">
+    <div class="relative w-full mx-auto h-auto flex items-end">
         <!-- Mobile -->
         <img src="img/banners/320x320/manifesto.png" 
              class="w-full h-auto object-cover block sm:hidden" 
              alt="Manifesto Banner">
-    
+        
         <!-- Tablet -->
         <img src="img/banners/768x320/manifesto.png" 
              class="w-full h-auto object-cover hidden sm:block md:hidden" 
              alt="Manifesto Banner">
-    
+        
         <!-- Desktop -->
         <img src="img/banners/1400x600/manifesto.png" 
              class="w-full h-auto object-cover hidden md:block" 
              alt="Manifesto Banner">
-    </div>    
+    
+        <a href="#introSection" class="absolute left-1/2 bottom-8 transform -translate-x-1/2 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-black animate-bounce shadow-lg border-4 border-gray-900 rounded-full p-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v12.293l3.646-3.647a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 16.293V4a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </div>          
 
     <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
         <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/manifesto.html" class="text-black hover:text-apink">Manifesto</a>
     </div>
 
-    <section class="font-garet flex flex-col lg:flex-row py-16 bg-white lg:w-3/4 w-full justify-center items-center" data-aos="fade-up">
+    <section class="font-garet flex flex-col lg:flex-row py-16 bg-white lg:w-3/4 w-full justify-center items-center" data-aos="fade-up" id="introSection">
         <div class="container mx-auto text-start px-24">
             <h2 class="font-garet text-3xl font-bold text-emerald-900 mb-6">Introduction</h2>
             <hr class="my-5 border-1 border-black w-1/5">
