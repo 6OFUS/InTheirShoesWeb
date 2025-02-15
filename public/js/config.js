@@ -5,7 +5,8 @@ export const firebaseConfig = {
   projectId: "intheirshoesvr",
   storageBucket: "intheirshoesvr.firebasestorage.app",
   messagingSenderId: "217693075201",
-  appId: "1:217693075201:web:ed2060a99265b9e0e04d00"
+  appId: "1:217693075201:web:ed2060a99265b9e0e04d00",
+  databaseURL: 'https://intheirshoesvr-default-rtdb.asia-southeast1.firebasedatabase.app'
 };
 
 // SUPABASE

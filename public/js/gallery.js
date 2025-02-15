@@ -1,6 +1,5 @@
 import { supabaseUrl, supabaseAnonKey } from "./config.js";
 
-// Create Supabase Client
 const _supabase = supabase.createClient(supabaseUrl, supabaseAnonKey);
 
 const photos = [];

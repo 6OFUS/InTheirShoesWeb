@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.getElementById('profileAvatar').src = data.user.user_metadata?.avatar_url || 'img/characters/blindman.png';
         document.getElementById('sidebarAvatar').src = data.user.user_metadata?.avatar_url || 'img/characters/blindman.png';
-        document.getElementById('settingsAvatar').src = data.user.user_metadata?.avatar_url || 'img/characters/blindman.png';
     }
 
     checkUser();

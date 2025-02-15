@@ -186,35 +186,41 @@
                 </div>
             </div>
 
-            <!-- Grid Layout -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-10">
+            <!-- Phone Skins -->
+            <h2 class="text-xl font-bold mt-10">Phone Skins</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-4">
                 <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample2.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
+                    <img src="img/shop/phone_default.png" class="">
+                    <button onclick="handleSelectSkin('phone', 'phone_default.png')" class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">Select</button>
                 </div>
                 <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
+                    <img src="img/shop/phone_purple.png" class="">
+                    <button onclick="handleSelectSkin('phone', 'phone_purple.png')" class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">Select</button>
                 </div>
                 <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample2.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
-                </div>
-                <div class="bg-egg-yellow px-6 py-8  rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
+                    <img src="img/shop/phone_sakura.png" class="">
+                    <button onclick="handleSelectSkin('phone', 'phone_sakura.png')" class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">Select</button>
                 </div>
                 <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample2.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
+                    <img src="img/shop/phone_darksakura.png" class="">
+                    <button onclick="handleSelectSkin('phone', 'phone_darksakura.png')" class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">Select</button>
                 </div>
-                <div class="bg-egg-yellow px-6 py-8  rounded-lg flex flex-col justify-center items-center shadow-lg">
-                    <img src="img/shop/shopexample1.png" class="">
-                    <button class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">BUY</button>
+            </div>
+
+            <!-- Camera Skins -->
+            <h2 class="text-xl font-bold mt-10">Camera Skins</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-4">
+                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
+                    <img src="img/shop/camera_default.png" class="">
+                    <button onclick="handleSelectSkin('camera', 'camera_default.png')" class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">Select</button>
+                </div>
+                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
+                    <img src="img/shop/camera_og.png" class="">
+                    <button onclick="handleSelectSkin('camera', 'camera_og.png')" class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">Select</button>
+                </div>
+                <div class="bg-egg-yellow px-6 py-8 rounded-lg flex flex-col justify-center items-center shadow-lg">
+                    <img src="img/shop/camera_battle.png" class="">
+                    <button onclick="handleSelectSkin('camera', 'camera_battle.png')" class="mt-5 bg-yellow-500 text-emerald-800 font-garet font-bold py-4 px-8 rounded-full">Select</button>
                 </div>
             </div>
         </main>
@@ -292,13 +298,7 @@
                 </div>
             </div>
             <div class="py-4 w-full h-5/6">
-                <div class="grid lg:grid-cols-3 grid-cols-2 gap-4 w-5/6 h-1/2 place-items-center">
-                    <img src="img/achievements/unobtained/heart_empathy_badge.png" alt="Heart of Empathy Badge" class="w-full h-full object-contain transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/achievements/unobtained/keycard_collector.png" alt="Keycard Collector Badge" class="w-full h-full object-contain transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/achievements/unobtained/master_solver.png" alt="Master Solver Badge" class="w-full h-full object-contain transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/achievements/unobtained/problem_solver.png" alt="Problem Solver Badge" class="w-full h-full object-contain transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/achievements/unobtained/safe_crosser.png" alt="Safe Crosser Badge" class="w-full h-full object-contain transition transform hover:-translate-y-1 cursor-pointer">
-                    <img src="img/achievements/unobtained/steady_navigator.png" alt="Steady Navigator Badge" class="w-full h-full object-contain transition transform hover:-translate-y-1 cursor-pointer">
+                <div class="grid lg:grid-cols-3 grid-cols-2 gap-4 w-5/6 h-1/2 place-items-center" id="achievements-container">
                 </div>                           
             </div>
         </main>
@@ -367,6 +367,19 @@
           </div>
         </div>
       </div>
+
+    <div id="achievement-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center text-start">
+        <div class="modal-conten w-full max-w-md bg-white shadow-lg rounded-lg p-10 relative">
+            <!-- Close Button -->
+            <button onclick="closeModal('achievement-modal')" class="self-end text-black text-4xl font-bold">&times;</button>
+            <img id="achievement-badge" alt="Achievement Badge">
+            <h2 class="text-xl font-bold my-2" id="achievement-title"></h2>
+            <p id="achievement-description"></p>
+            <p>Points: <span id="achievement-points"></span></p>
+            <p>Difficulty: <span id="achievement-difficulty"></span></p>
+            <p>Category: <span id="achievement-category"></span></p>
+        </div>
+    </div>
 
     <!-- Accessibility -->
     <section class="fixed bottom-32 right-4">
@@ -464,6 +477,7 @@
     </script>
     <script type="module" src="js/accessibility.js"></script>
     <script type="module" src="js/chatbot.js"></script>
+    <script type="module" src="js/skins.js"></script>
     <script type="module" src="js/achievements.js"></script>
     <script type="module" src="js/dashboard.js"></script>
     <script type="module" src="js/gallery.js"></script>
