@@ -55,6 +55,47 @@
             </div>
           </div>
         </div>
+        <!-- Signup Form Section -->
+        <div id="signup-section" class="hidden flex items-center justify-center h-full">
+          <div class="bg-white p-8 max-w-sm w-full">
+            <h1 class="text-center text-2xl text-emerald-900 font-semibold mb-6">Get Started with InTheirShoes</h1>
+      
+            <button id="signup-google" class="flex flex-col items-center justify-center w-full py-2 px-4 border border-black rounded-lg text-black hover:bg-gray-100 mb-4">
+              <div class="h-1/6 w-full my-1"><i class="fa-brands fa-google mx-2"></i>
+              Continue with Google</div>
+            </button>
+      
+            <div class="text-center text-gray-500 my-4">or</div>
+      
+            <form id="signup-form">
+              <input id="signup-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+              <input id="signup-password" type="password" placeholder="Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+              <input id="signup-confirm-password" type="password" placeholder="Confirm Password" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+              <h1 id="signup-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
+              <button type="submit" class="w-full bg-black text-white py-2 px-4 my-4 rounded-lg hover:bg-gray-800">Continue</button>
+            </form>
+    
+            <div class="text-center mt-8 text-gray-500">
+              Been here before? <a id="show-login" href="#" class="text-blue-500 hover:underline">Login</a>
+            </div>
+          </div>
+      </div>
+      <!-- Reset Password Form Section -->
+      <div id="reset-section" class="hidden flex items-center justify-center h-full">
+          <div class="bg-white p-8 max-w-md w-full">
+            <h1 class="text-center text-3xl text-emerald-900 font-semibold mb-6">Enter your email to reset password</h1>
+      
+            <form id="reset-password-form">
+              <input id="reset-password-email" type="email" placeholder="Email" class="w-full mb-3 px-4 py-2 border rounded-lg focus:ring-alblue focus:border-alblue">
+              <h1 id="reset-password-error" class="error-message text-center text-md text-ared font-semibold mb-6 hidden"></h1>
+              <button type="submit" class="w-full bg-black text-white py-3 px-4 my-4 rounded-lg hover:bg-gray-800">Reset Password</button>
+            </form>
+    
+            <div class="text-center mt-8 text-gray-500">
+              <a id="cancel-reset" href="#" class="text-blue-500 hover:underline">Cancel</a>
+            </div>
+          </div>
+      </div>
     </div>
 
     <!-- Right Rectangle -->
