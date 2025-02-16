@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Donate</title>
@@ -16,7 +15,7 @@
   bg-[url('img/banners/320x320/donate.png')] sm:bg-[url('img/banners/768x320/donate.png')] 
   md:bg-[url('img/banners/1400x600/donate.png')] 
   bg-center bg-no-repeat bg-contain overflow-x-hidden">
-    <div class="flex bg-white shadow-md h-32 w-full relative">
+    <div class="flex bg-white shadow-md h-32 w-full relative overflow-visible">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
                 <img class="w-32 h-32" src="./img/branding/logo.png" alt="Logo">
@@ -41,16 +40,16 @@
                 </div>
             </nav>
         </div>
-
-        <!-- Dropdown -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md py-4 flex flex-col items-center md:hidden">
-            <a href="/about.html" class="text-black hover:text-apink text-xl py-2">About</a>
-            <a href="/support.html" class="text-black hover:text-apink text-xl py-2">Support</a>
-            <a href="/contact.html" class="text-black hover:text-apink text-xl py-2">Contact Us</a>
-            <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
-            <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
-        </div>
     </div>
+
+<!-- Dropdown -->
+<div id="mobile-menu" class="hidden absolute top-[8rem] left-0 w-full bg-white shadow-md py-4 flex flex-col items-center md:hidden z-[99]">
+    <a href="/about.html" class="text-black hover:text-apink text-xl py-2">About</a>
+    <a href="/support.html" class="text-black hover:text-apink text-xl py-2">Support</a>
+    <a href="/contact.html" class="text-black hover:text-apink text-xl py-2">Contact Us</a>
+    <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
+    <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
+</div>
 
     <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
         <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/about.html" class="text-black hover:text-apink">Donate</a>

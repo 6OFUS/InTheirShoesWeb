@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
-<body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center overflow-x-hidden">
-    <div class="flex bg-white shadow-md h-32 w-full relative">
+<body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center overflow-x-hidden relative">
+    <div class="flex bg-white shadow-md h-32 w-full relative overflow-visible">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
                 <img class="w-32 h-32" src="./img/branding/logo.png" alt="Logo">
@@ -40,16 +40,17 @@
                 </div>
             </nav>
         </div>
-
-        <!-- Dropdown -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-md py-4 flex flex-col items-center md:hidden">
-            <a href="/about.html" class="text-black hover:text-apink text-xl py-2">About</a>
-            <a href="/support.html" class="text-black hover:text-apink text-xl py-2">Support</a>
-            <a href="/contact.html" class="text-black hover:text-apink text-xl py-2">Contact Us</a>
-            <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
-            <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
-        </div>
     </div>
+
+    <!-- Dropdown -->
+    <div id="mobile-menu" class="hidden absolute top-[8rem] left-0 w-full bg-white shadow-md py-4 flex flex-col items-center md:hidden z-[99]">
+        <a href="/about.html" class="text-black hover:text-apink text-xl py-2">About</a>
+        <a href="/support.html" class="text-black hover:text-apink text-xl py-2">Support</a>
+        <a href="/contact.html" class="text-black hover:text-apink text-xl py-2">Contact Us</a>
+        <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
+        <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
+    </div>
+
 
     <div class="relative w-full mx-auto h-auto flex items-end">
         <!-- Mobile -->
@@ -166,22 +167,47 @@
     <div class="flex flex-col items-center rounded-lg shadow-lg w-11/12 bg-blue-100 p-6 sm:p-12 m-24 font-bold">
         <h1 class="text-center text-2xl sm:text-4xl font-garet font-bold text-pblack mb-8">User Experience in Action: Usability Testing</h1>
         <hr class="self-center align-center border-t-2 border-black w-24">
-        
+    
         <div class="w-full gap-4 my-8 sm:my-16 items-center justify-center flex lg:flex-row flex-col" data-aos="fade-left">
-            <span class="lg:w-1/4 w-5/6 text-lg">With inclusivity in mind, we conducted a usability test with our persona, who has a connection to someone with dyslexia. This allowed us to better understand accessibility challenges and refine our experience.<br><br>Watch the video to learn more about the testing process, and check out the next video to see our final product, improved based on the challenges we encountered during usability testing.</span>
-            <iframe class="mx-16 lg:my-0 my-6 w-5/6 lg:w-1/2" height="420" src="https://www.youtube.com/embed/paWE-GvDO1c?si=evjof8B1qZWIgw1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <span class="lg:w-1/4 w-5/6 text-lg">
+                With inclusivity in mind, we conducted a usability test with our persona, who has a connection to someone with dyslexia. This allowed us to better understand accessibility challenges and refine our experience.<br><br>
+                Watch the video to learn more about the testing process, and check out the next video to see our final product, improved based on the challenges we encountered during usability testing.
+            </span>
+    
+            <div class="w-5/6 lg:w-1/2">
+                <div class="relative" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+                    <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/sutJ8uE5BGE?si=TfwgJZGG98WtfSyb" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
     </div>
-
+    
     <div class="flex flex-col items-center rounded-lg shadow-lg w-11/12 bg-egg-yellow p-6 sm:p-12 m-24 font-bold">
         <h1 class="text-center text-2xl sm:text-4xl font-garet font-bold text-pblack mb-8">Step into the experience: Project Walkthrough</h1>
         <hr class="self-center align-center border-t-2 border-black w-24">
-        
+    
         <div class="w-full gap-4 my-8 sm:my-16 items-center text-center justify-center flex flex-col" data-aos="fade-left">
-            <span class="w-5/6 text-lg">This walkthrough showcases our final project, improved for inclusivity based on usability testing feedback.</span>
-            <iframe class="mx-16 mt-6 lg:w-1/2 w-3/4 h-96" src="https://www.youtube.com/embed/paWE-GvDO1c?si=evjof8B1qZWIgw1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <span class="w-5/6 text-lg">
+                This walkthrough showcases our final project, improved for inclusivity based on usability testing feedback.
+            </span>
+    
+            <div class="w-3/4 lg:w-1/2 mt-6">
+                <div class="relative" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+                    <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/paWE-GvDO1c?si=evjof8B1qZWIgw1Y" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
-    </div>
+    </div>    
 
     <div class="flex flex-col items-center rounded-lg shadow-lg w-11/12 bg-pcyan p-6 sm:p-12 m-24 font-bold">
         <h1 class="text-center text-2xl sm:text-4xl font-garet font-bold text-pblack mb-8">Our Vision & Plan: Project Proposal</h1>
@@ -331,7 +357,7 @@
         AOS.init({
             duration: 1200,
             easing: 'ease-in-out',
-            once: false,
+            once: true,
         });
 
         // mobile nav
