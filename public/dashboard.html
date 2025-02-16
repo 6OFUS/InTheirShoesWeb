@@ -264,22 +264,22 @@
             </div>
 
             <div class='p-6 font-grotesk'>
-                <table class='w-full border border-pblack'>
-                    <thead>
-                        <tr class='bg-pblack text-pgrey'>
-                            <th class='px-4 py-2'>Rank</th>
-                            <th class='px-4 py-2'>Name</th>
-                            <th class='px-4 py-2'>Points</th>
-                        </tr>
-                    </thead>
-                    <tbody id='leaderboard'></tbody>
-                </table>
+                <div class="overflow-x-auto rounded-lg shadow-lg">
+                    <table class="w-full border border-gray-300 rounded-lg shadow-lg">
+                        <thead>
+                            <tr class="bg-gray-800 text-white uppercase text-sm leading-normal">
+                                <th class="py-3 px-6 text-left">Rank</th>
+                                <th class="py-3 px-6 text-left">Name</th>
+                                <th class="py-3 px-6 text-left">Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard" class="text-gray-700 text-sm font-light">
+                        </tbody>
+                    </table>
+                </div>                
                 
                 <h2 class='text-2xl font-bold text-pblack mt-6 mb-4'>Top 10 Players by Total Playtime</h2>
                 <canvas id='playtimeChart' class='bg-white p-4 rounded-lg shadow-lg'></canvas>
-                
-                <h2 class='text-2xl font-bold text-pblack mt-6 mb-4'>Points Over Time</h2>
-                <canvas id='pointsChart' class='bg-white p-4 rounded-lg shadow-lg'></canvas>
             </div>
         </main>
 
