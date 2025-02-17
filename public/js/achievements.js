@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     get(ref(db, `players/${userId}/Achievements`)).then(async (snapshot) => {
         if (snapshot.exists()) {
+            achievementsContainer.innerHTML = "";
             const achievements = snapshot.val();
 
             // Collect all achievement fetch promises

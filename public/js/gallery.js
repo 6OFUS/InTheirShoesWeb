@@ -31,7 +31,10 @@ async function displayGallery(userId) {
         return;
     }
 
-    data.forEach(item => {
+    // Filter out any .emptyFolderPlaceholder file
+    const filteredData = data.filter(item => item.name !== '.emptyFolderPlaceholder');
+
+    filteredData.forEach(item => {
         photos.push({
             timestamp: item.created_at,
             url: `${supabaseUrl}/storage/v1/object/public/playerGalleries/${userId}/${item.name}`
@@ -56,6 +59,7 @@ async function displayGallery(userId) {
         galleryContainer.appendChild(button);
     });
 }
+
 
 function openLightbox(imageUrl) {
     const lightbox = document.createElement('div');
