@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
-<body class="bg-gray-300 font-grotesk w-screen h-screen overflow-x-hidden">
+<body class="bg-white font-grotesk w-screen h-screen overflow-x-hidden">
     <div class="flex bg-white shadow-md h-32 w-full relative overflow-visible">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
@@ -64,7 +64,7 @@
              class="w-full h-full object-contain hidden md:block" 
              alt="Landing Banner">
     
-        <div class="absolute bottom-0 left-0 w-full lg:w-2/3 flex justify-start p-2 md:p-6 sm:p-12 z-10">
+        <div class="absolute bottom-0 left-0 w-full lg:w-2/3 flex justify-start p-2 md:p-6 sm:p-12 z-0">
             <div class="flex flex-col bg-yellow-500 font-garet font-bold px-6 sm:px-10 py-8 sm:py-10 
                         rounded-3xl shadow-lg w-full md:w-4/5 lg:w-3/5 space-y-6 sm:space-y-12">
                 
@@ -81,7 +81,7 @@
                 </a>
             </div>
         </div>
-        <a href="#introSection" class="hidden lg:flex absolute left-1/2 bottom-8 transform -translate-x-1/2 cursor-pointer z-40">
+        <a href="#introSection" class="hidden lg:flex absolute left-1/2 bottom-8 transform -translate-x-1/2 cursor-pointer z-0">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-black animate-bounce shadow-lg border-4 border-gray-900 rounded-full p-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v12.293l3.646-3.647a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L9 16.293V4a1 1 0 011-1z" clip-rule="evenodd" />
             </svg>
@@ -110,10 +110,40 @@
         </div>
     </section>
 
+    <div class="flex flex-col items-center rounded-lg shadow-lg w-11/12 bg-blue-100 p-6 sm:p-12 mx-auto font-bold">
+        <h1 class="text-center text-2xl sm:text-4xl font-garet font-bold text-pblack mb-8">User Experience in Action: Usability Testing</h1>
+        <hr class="self-center align-center border-t-2 border-black w-24">
+    
+        <div class="w-full gap-4 my-8 sm:my-16 items-center justify-center flex lg:flex-row flex-col" data-aos="fade-left">
+            
+    
+            <div class="lg:w-1/4 w-5/6 text-lg flex flex-col">
+                <span class="">
+                    With inclusivity at the core of our design, we created InTheirShoes to foster empathy and awareness. Our teaser gives you a first look at the immersive VR experience that puts you in the shoes of individuals with disabilities.
+                    <br><br>
+                    👀 Watch the teaser to get a glimpse of the challenges and experiences we bring to life. Then, click the button below to explore the full walkthrough, showcasing the enhanced version after usability testing!
+                    <br>
+                    🔗 Watch the full walkthrough now! ⬇️
+                </span>
+                <a href="/manifesto.html#walkthroughSection" class="self-center md:self-auto my-6 text-center w-5/6 bg-ayellow text-emerald-800 py-2 md:my-4 rounded-3xl font-bold hover:bg-gray-200 font-garet">View Walkthrough Video</a>
+            </div>
+            <div class="w-5/6 lg:w-1/2">
+                <div class="relative" style="padding-top: 56.25%;">
+                    <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/Q6ocrWcpJgE?si=u76W5D7k2ETKJ8tB" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section id="disabilities-info" class="">
         <div class="font-garet w-full h-full">
             <!-- Row 1: Visual Impairment -->
-            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-white text-black py-24 px-6 md:px-12" data-aos="fade-left">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-white text-black py-24 px-6 md:px-12" data-aos="fade-up">
                 <div class="flex flex-col text-center md:text-left">
                     <h3 class="text-2xl font-bold mb-2 font-grotesk">Visual Impairment</h3>
                     <hr class="h-px mt-4 mb-6 border-black border-2">
@@ -125,7 +155,7 @@
                 </div>
             </div>
             <!-- Row 2: Audio Impairment -->
-            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-blue-200 text-black py-24 px-6 md:px-12" data-aos="fade-right">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-blue-200 text-black py-24 px-6 md:px-12" data-aos="fade-up">
                 <div class="flex flex-col text-center md:text-left">
                     <h3 class="text-2xl font-bold mb-2 font-grotesk">Audio Impairment</h3>
                     <hr class="h-px mt-4 mb-6 border-black border-2">
@@ -137,7 +167,7 @@
                 </div>
             </div>
             <!-- Row 3: Wheelchair Disability -->
-            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-pcyan text-black py-24 px-6 md:px-12" data-aos="fade-left">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-pcyan text-black py-24 px-6 md:px-12" data-aos="fade-up">
                 <div class="flex flex-col text-center md:text-left">
                     <h3 class="text-2xl font-bold mb-2 font-grotesk">Wheelchair Accessibility</h3>
                     <hr class="h-px mt-4 mb-6 border-black border-2">
@@ -149,7 +179,7 @@
                 </div>
             </div>
             <!-- Row 4: Dyslexia -->
-            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-yellow-100 text-black py-24 px-6 md:px-12" data-aos="fade-right">
+            <div class="flex flex-col md:flex-row items-center justify-between w-full bg-yellow-100 text-black py-24 px-6 md:px-12" data-aos="fade-up">
                 <div class="flex flex-col text-center md:text-left">
                     <h3 class="text-2xl font-bold mb-2 font-grotesk">Dyslexia</h3>
                  <hr class="h-px mt-4 mb-6 border-black border-2">
@@ -169,7 +199,7 @@
             <img src="img/bg/settingBTN.png" alt="Chatbot" class="w-24 h-24">
         </button>
         
-        <div id="accessibilityModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+        <div id="accessibilityModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-32">
             <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 relative">
                 <button onclick="closeModal('accessibilityModal')" class="self-end text-black text-4xl font-bold">&times;</button>
                 <img src="img/bg/settingBTN.png" alt="Chatbot" class="mx-auto my-4 w-16 h-16">
@@ -222,7 +252,7 @@
             <img src="img/bg/chatBTN.png" alt="Chatbot" class="w-24 h-24">
         </button>
         
-        <div id="chatModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+        <div id="chatModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-32">
             <div class="w-full max-w-md bg-white shadow-lg rounded-lg p-6 relative">
                 <button onclick="closeModal('chatModal')" class="self-end text-black text-4xl font-bold">&times;</button>
                 <img src="img/bg/chatBTN.png" alt="Chatbot" class="mx-auto my-4 w-16 h-16">
