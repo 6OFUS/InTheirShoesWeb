@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <title>Donate</title>
+    <title>Empathy Quiz</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/garet" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/opendyslexic" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
 </head> 
 <body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center 
-  bg-[url('img/banners/320x320/donate.png')] sm:bg-[url('img/banners/768x320/donate.png')] 
-  md:bg-[url('img/banners/1400x600/donate.png')] 
-  bg-center bg-no-repeat bg-contain overflow-x-hidden">
+bg-[url('img/banners/320x320/contact.png')] sm:bg-[url('img/banners/768x320/contact.png')] 
+md:bg-[url('img/banners/1400x600/contact.png')] 
+bg-center bg-no-repeat bg-contain overflow-x-hidden">
     <div class="flex bg-white shadow-md h-32 w-full relative overflow-visible">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
@@ -52,30 +55,88 @@
         <a href="/donate.html" class="text-black hover:text-apink text-xl py-2">Donate</a>
         <a href="/auth.html" class="text-black hover:text-apink text-xl py-2">Get Started</a>
     </div>
-
-    <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
-        <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/about.html" class="text-black hover:text-apink">Donate</a>
-    </div>
     
-    <div class="flex flex-col w-11/12 h-full items-center justify-center">
-        <img src="img/bg/donatedrawing.png" alt="Donation Illustration" class="w-2/3 max-w-md">
-        
-        <div class="xl:w-1/3 lg:w-1/2 w-11/12 flex flex-col items-center font-garet font-semibold">
-            <div class="bg-egg-yellow p-10 rounded-xl flex flex-col items-start shadow-lg w-full">
-                <h2 class="text-2xl font-bold text-pblack">Donation</h2>
-                <p class="text-pblack text-lg my-4 text-start font-grotesk">
-                    Your donations help make a difference in the lives of those in need. Join us in creating a more inclusive world.
-                </p>
-                <div class="mt-4 flex justify-between items-center w-full">
-                    <button class="md:text-xl text-md bg-yellow-500 text-emerald-800 px-7 py-3 rounded-full hover:bg-apink">Donate</button>
-                    <a href="https://www.touch.org.sg/get-involved/donation.html?utm_source=google_paid&utm_medium=paid_search&utm_campaign=digital_campaigns_2023&utm_term=&utm_content=general&saf_src=google_g&saf_pt=&saf_kw=charity%20donation&saf_dv=&saf_cam=19855418339&saf_grp=150775668441&saf_ad=698812973965&account_id=7794872448&saf_acc=7794872448&saf_cam_tp=search&gad_source=1&gclid=CjwKCAiA8Lu9BhA8EiwAag16b7ZHPPdYp6714lhqe7CmqQhnsfyGNP1JyshWrsaMq_ukvUNIUtHQXRoCxaYQAvD_BwE" class="text-pblack md:text-lg text-md">More Details ></a>
-                </div>
-            </div>
-        </div>
+    <div class="flex pt-12 items-start text-start justify-start align-start w-11/12 space-x-2">
+        <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/empathyquiz.html" class="text-black hover:text-apink">Empathy Quiz</a>
     </div>
 
-    <!-- Accessibility -->
-    <section class="fixed bottom-32 right-4">
+    <main class="lg:w-1/4 md:w-1/2 w-5/6 mx-auto h-full mb-24 mt-16 font-grotesk font-bold text-pblack">
+        <h1 class="text-3xl font-bold">Empathy Quiz</h1>
+        <form class="mt-6 space-y-4 flex flex-col items-center" id="empathyQuizStart">
+            <p class="my-6 text-pblack text-sm">Join us on our journey to challenge societal barriers and promote empathy! Follow us on Instagram and TikTok @5fiveofus for updates, stories, and behind-the-scenes content.</p>
+            <button type="submit" class="m-4 bg-yellow-500 text-emerald-800 font-garet font-bold py-2 px-6 rounded-2xl hover:bg-agreen">
+                Start
+            </button>
+        </form>
+
+        <form class="hidden mt-6 space-y-4 flex flex-col items-center" id="empathyQuizForm">
+            <div class="max-w-xl mx-auto p-5 font-sans">
+                <div class="mb-5">
+                    <p class="font-medium mb-2">1. I feel comfortable expressing my emotions.</p>
+                    <div class="ml-3 space-y-1">
+                    <label class="block"><input type="radio" name="q1" value="1" class="mr-2"> Strongly Disagree</label>
+                    <label class="block"><input type="radio" name="q1" value="2" class="mr-2"> Disagree</label>
+                    <label class="block"><input type="radio" name="q1" value="3" class="mr-2"> Neutral</label>
+                    <label class="block"><input type="radio" name="q1" value="4" class="mr-2"> Agree</label>
+                    <label class="block"><input type="radio" name="q1" value="5" class="mr-2"> Strongly Agree</label>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <p class="font-medium mb-2">2. I often consider other people’s feelings before speaking.</p>
+                    <div class="ml-3 space-y-1">
+                    <label class="block"><input type="radio" name="q2" value="1" class="mr-2"> Strongly Disagree</label>
+                    <label class="block"><input type="radio" name="q2" value="2" class="mr-2"> Disagree</label>
+                    <label class="block"><input type="radio" name="q2" value="3" class="mr-2"> Neutral</label>
+                    <label class="block"><input type="radio" name="q2" value="4" class="mr-2"> Agree</label>
+                    <label class="block"><input type="radio" name="q2" value="5" class="mr-2"> Strongly Agree</label>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <p class="font-medium mb-2">3. I prefer solving problems over discussing emotions.</p>
+                    <div class="ml-3 space-y-1">
+                    <label class="block"><input type="radio" name="q3" value="1" class="mr-2"> Strongly Disagree</label>
+                    <label class="block"><input type="radio" name="q3" value="2" class="mr-2"> Disagree</label>
+                    <label class="block"><input type="radio" name="q3" value="3" class="mr-2"> Neutral</label>
+                    <label class="block"><input type="radio" name="q3" value="4" class="mr-2"> Agree</label>
+                    <label class="block"><input type="radio" name="q3" value="5" class="mr-2"> Strongly Agree</label>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <p class="font-medium mb-2">4. I can easily sense when someone is upset, even if they don’t say it.</p>
+                    <div class="ml-3 space-y-1">
+                    <label class="block"><input type="radio" name="q4" value="1" class="mr-2"> Strongly Disagree</label>
+                    <label class="block"><input type="radio" name="q4" value="2" class="mr-2"> Disagree</label>
+                    <label class="block"><input type="radio" name="q4" value="3" class="mr-2"> Neutral</label>
+                    <label class="block"><input type="radio" name="q4" value="4" class="mr-2"> Agree</label>
+                    <label class="block"><input type="radio" name="q4" value="5" class="mr-2"> Strongly Agree</label>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <p class="font-medium mb-2">5. I like offering practical advice more than emotional support.</p>
+                    <div class="ml-3 space-y-1">
+                    <label class="block"><input type="radio" name="q5" value="1" class="mr-2"> Strongly Disagree</label>
+                    <label class="block"><input type="radio" name="q5" value="2" class="mr-2"> Disagree</label>
+                    <label class="block"><input type="radio" name="q5" value="3" class="mr-2"> Neutral</label>
+                    <label class="block"><input type="radio" name="q5" value="4" class="mr-2"> Agree</label>
+                    <label class="block"><input type="radio" name="q5" value="5" class="mr-2"> Strongly Agree</label>
+                    </div>
+                </div>
+
+                <div id="results" class="mt-8 font-bold"></div>
+            </div>
+
+            <button type="submit" class="m-4 bg-yellow-500 text-emerald-800 font-garet font-bold py-2 px-6 rounded-2xl hover:bg-agreen">
+                Submit
+            </button>
+        </form>
+    </main>
+
+     <!-- Accessibility -->
+     <section class="fixed bottom-32 right-4">
         <button onclick="openModal('accessibilityModal')" class="rounded-full shadow-lg">
             <img src="img/bg/settingBTN.png" alt="Chatbot" class="w-24 h-24">
         </button>
@@ -168,7 +229,7 @@
         function closeModal(modalId) {
             document.getElementById(modalId).classList.add('hidden');
         }
-
+        
         // mobile nav
         document.getElementById('menu-toggle').addEventListener('click', function() {
             var mobileMenu = document.getElementById('mobile-menu');
@@ -177,6 +238,7 @@
     </script>
     <script type="module" src="js/accessibility.js"></script>
     <script type="module" src="js/chatbot.js"></script>
+    <script type="module" src="js/empathy-quiz.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/c14073a443.js" crossorigin="anonymous"></script>
     <script src="tailwind.config.js"></script>
