@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head> 
-<body class="bg-white font-grotesk w-screen h-screen flex flex-col items-center 
+<body class="bg-white bg-fixed font-grotesk w-screen h-screen flex flex-col items-center 
 bg-[url('img/banners/320x320/contact.png')] sm:bg-[url('img/banners/768x320/contact.png')] 
 md:bg-[url('img/banners/1400x600/contact.png')] 
-bg-center bg-no-repeat bg-contain overflow-x-hidden">
+bg-center bg-no-repeat bg-cover overflow-x-hidden">
     <div class="flex bg-white shadow-md h-32 w-full relative overflow-visible">
         <div class="w-11/12 mx-auto flex justify-between items-center">
             <a href="/" class="flex flex-row text-3xl font-bold text-black font-grotesk items-center">
@@ -60,15 +60,18 @@ bg-center bg-no-repeat bg-contain overflow-x-hidden">
         <a href="/" class="text-black hover:text-apink">Home</a> <span>></span> <a href="/empathyquiz.html" class="text-black hover:text-apink">Empathy Checkpoint</a>
     </div>
 
-    <main class="lg:w-1/3 md:w-1/2 w-5/6 mx-auto h-full mb-24 mt-16 font-grotesk font-bold text-pblack">
+    <main class="lg:w-1/2 w-5/6 mx-auto h-full mb-24 mt-16 font-grotesk font-bold text-pblack">
         <h1 class="text-3xl font-bold">Empathy Checkpoint</h1>
         <form class="mt-6 space-y-12 flex flex-col items-center" id="empathyQuizStart">
-            <p class="my-8 text-pblack text-md">
-Before You Begin!
-<BR><br>
-This quiz is designed to help you better understand your care recipient's emotional world and your own, so you can connect on a deeper, more compassionate level.
-<br><br>
-Take a few minutes to invite the person you’re caring for to join you. You'll each answer a set of simple questions separately, and then receive insights that highlight your similarities and differences. These insights can help you communicate more effectively and strengthen your caregiving relationship.</p>
+            <div class="flex lg:flex-row flex-col justify-center items-center">
+                <img src="img/characters/wheelchairgirl.png" alt="Empathy Checkpoint" class="w-72 h-72 mb-4">
+                <p class="my-8 text-pblack text-md">
+                Before You Begin!
+                <BR><br>
+                This quiz is designed to help you better understand your care recipient's emotional world and your own, so you can connect on a deeper, more compassionate level.
+                <br><br>
+                Take a few minutes to invite the person you’re caring for to join you. You'll each answer a set of simple questions separately, and then receive insights that highlight your similarities and differences. These insights can help you communicate more effectively and strengthen your caregiving relationship.</p>
+            </div>
             <button type="submit" class="m-4 bg-yellow-500 text-emerald-800 font-garet font-bold py-2 px-6 rounded-2xl hover:bg-agreen">
                 Start
             </button>
@@ -76,11 +79,12 @@ Take a few minutes to invite the person you’re caring for to join you. You'll 
 
         <form class="hidden mt-6 space-y-4 flex flex-col items-center justify-center" id="empathyQuizForm">
             <div id="quiz-container" class="max-w-xl mx-auto p-5 font-sans space-y-6"></div>
-            <div id="results" class="mt-8 font-bold text-center text-lg text-emerald-800"></div>
             <button type="submit" class="m-4 bg-yellow-500 text-emerald-800 font-garet font-bold py-2 px-6 rounded-2xl hover:bg-agreen">
                 Submit
             </button>
         </form>
+
+        <div id="results" class="my-12 font-bold text-center text-lg text-emerald-800"></div>
     </main>
 
      <!-- Accessibility -->

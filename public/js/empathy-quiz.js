@@ -1,61 +1,130 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const formStart = document.getElementById("empathyQuizStart");
+import { GEMINI_API_KEY } from './config.js';
+
+const questionsText = [
+    "I try to understand how others feel in various situations.",
+    "I often feel compassion when someone is upset.",
+    "I notice subtle emotional cues like facial expressions or tone.",
+    "I feel uneasy when others are distressed.",
+    "I prefer structured routines and organized plans.",
+    "I like discussing feelings before jumping into action.",
+    "I imagine different perspectives to understand someone's experience.",
+    "I stay composed when others are emotional.",
+    "I enjoy solving practical problems more than emotional conversations.",
+    "I like introducing new and creative experiences.",
+    "I naturally take the lead in group activities.",
+    "I check in on others' feelings even when things seem fine.",
+    "I feel helpful when I offer clear steps to move forward.",
+    "I often reflect on stories or past experiences of others.",
+    "I listen supportively without letting my own emotions interfere."
+];
+
+const personas = [
+    "Emotional Anchor",
+    "Practical Protector",
+    "Reflective Observer",
+    "Boundaried Supporter",
+    "Task-Oriented Helper"
+];
+
+const colors = [
+    { border: 'border-red-500', bg: 'bg-red-500' },
+    { border: 'border-orange-400', bg: 'bg-orange-400' },
+    { border: 'border-gray-400', bg: 'bg-gray-400' },
+    { border: 'border-green-400', bg: 'bg-green-400' },
+    { border: 'border-emerald-500', bg: 'bg-emerald-500' }
+];
+
+// Prompt for Gemini
+function buildGeminiPrompt(userRatings) {
+    const personaList = `
+    1. Emotional Anchor: Deeply compassionate and emotionally in tune with others.
+    2. Practical Protector: Organized and pragmatic, preferring structure over emotion.
+    3. Reflective Observer: Thoughtful and imaginative, often reflecting deeply on human experiences.
+    4. Boundaried Supporter: Caring but emotionally balanced, good at offering support without burnout.
+    5. Task-Oriented Helper: Energetic and action-driven, prefers to help through tasks more than conversations.
+    `;
+    const formattedAnswers = userRatings.map((val, i) => `${i + 1}. ${questionsText[i]} → ${val}`).join("\n");
+
+    return `
+
+    You are an empathy profiling assistant. Analyze the user's answers to a 15-question empathy quiz.
+
+    Empathy Personas:
+    ${personaList}
+
+    Based on the following answers (scale of 1-5, where 1 = Strongly Disagree and 5 = Strongly Agree), identify which single empathy persona fits best. Then respond with:
+
+    - Persona:
+    - Advice:
+
+    Answers:
+    ${formattedAnswers}
+        `.trim();
+}
+
+async function getEmpathyPersonaFromGemini(prompt) {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+    const body = {
+        contents: [{
+            parts: [{ text: prompt }]
+        }]
+    };
+
+    try {
+        const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body)
+        });
+
+        const data = await res.json();
+
+        const output = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        return output || "Sorry, your empathy persona could not be determined. Please try again.";
+    } catch (error) {
+        console.error("Gemini API Error:", error);
+        return "There was a problem analyzing your results. Please try again later.";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("empathyQuizForm");
+    const resultBox = document.getElementById("results");
+    const formStart = document.getElementById("empathyQuizStart");
     const body = document.querySelector("body");
     const container = document.getElementById("quiz-container");
-    
-    const questions = [
-        "I feel comfortable expressing my emotions.",
-        "I often consider other people's feelings before speaking",
-        "I prefer solving problems over discussing emotions",
-        "I can easily sense when someone is upset, even if they don't say it",
-        "I like offering practical advice more than emotional support."
-    ];
-
-    const colors = [
-        { border: 'border-red-500', bg: 'bg-red-500' },
-        { border: 'border-orange-400', bg: 'bg-orange-400' },
-        { border: 'border-gray-400', bg: 'bg-gray-400' },
-        { border: 'border-green-400', bg: 'bg-green-400' },
-        { border: 'border-emerald-500', bg: 'bg-emerald-500' }
-    ];
 
     formStart.addEventListener("submit", function (event) {
         event.preventDefault();
-
-        //Dynamically create the quiz questions
-        questions.forEach((question, index) => {
-            const qNum = index + 1;
+        questionsText.forEach((qText, i) => {
             const div = document.createElement("div");
-            div.className = `max-w-xl mx-auto p-5 font-sans space-y-8`;
+            div.className = "max-w-xl mx-auto p-5 font-sans space-y-8";
             div.setAttribute("data-aos", "fade-up");
 
-            // Question text
             const p = document.createElement("p");
             p.className = "font-medium text-lg mb-4 text-center";
-            p.textContent = `${qNum}. ${question}`;
+            p.textContent = `${i + 1}. ${qText}`;
 
-            // Radio 
             const radioSet = document.createElement("div");
             radioSet.className = "flex justify-center space-x-4";
-            for (let i = 1; i <= 5; i++) {
-            const label = document.createElement("label");
 
-            const input = document.createElement("input");
-            input.type = "radio";
-            input.name = `q${qNum}`;
-            input.value = i;
-            input.className = "peer hidden";
+            for (let v = 1; v <= 5; v++) {
+                const label = document.createElement("label");
+                const input = document.createElement("input");
+                input.type = "radio";
+                input.name = `q${i + 1}`;
+                input.value = v;
+                input.className = "peer hidden";
 
-            const dot = document.createElement("div");
-            dot.className = `w-8 h-8 md:w-10 md:h-10 rounded-full border-2 ${colors[i - 1].border} peer-checked:${colors[i - 1].bg} transition`;
+                const dot = document.createElement("div");
+                dot.className = `w-8 h-8 md:w-10 md:h-10 rounded-full border-2 ${colors[v - 1].border} peer-checked:${colors[v - 1].bg} transition`;
 
-            label.appendChild(input);
-            label.appendChild(dot);
-            radioSet.appendChild(label);
+                label.appendChild(input);
+                label.appendChild(dot);
+                radioSet.appendChild(label);
             }
 
-            // Labels
             const scaleLabels = document.createElement("div");
             scaleLabels.className = "flex justify-between mt-2 text-sm text-gray-500 px-3";
             scaleLabels.innerHTML = `<span>Strongly Disagree</span><span>Strongly Agree</span>`;
@@ -63,48 +132,33 @@ document.addEventListener("DOMContentLoaded", function () {
             div.appendChild(p);
             div.appendChild(radioSet);
             div.appendChild(scaleLabels);
-
             container.appendChild(div);
         });
 
         formStart.classList.add("hidden");
         form.classList.remove("hidden");
         body.classList.remove("h-screen");
-        AOS.refresh()
+        AOS.refresh();
     });
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        const scores = [];
-        for (let i = 1; i <= 5; i++) {
-            const value = document.querySelector(`input[name="q${i}"]:checked`);
-            if (value) scores.push(parseInt(value.value));
+        const responses = [];
+        for (let i = 1; i <= questionsText.length; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if (!selected) {
+                resultBox.innerText = "Please answer all questions before submitting.";
+                return;
+            }
+            responses.push(parseInt(selected.value));
         }
 
-        if (scores.length < 5) {
-            document.getElementById("results").innerText = "Please answer all questions.";
-            return;
-        }
-
-        const total = scores.reduce((a, b) => a + b, 0);
-        const avg = total / scores.length;
-
-        let persona = "";
-        if (avg >= 4) persona = "Emotionally Intuitive";
-        else if (avg >= 3) persona = "Balanced Empath";
-        else persona = "Practical Helper";
-
-        let advice = "";
-        if (persona === "Emotionally Intuitive") {
-            advice = "You're very in tune with emotions. Try to give space for others to express themselves.";
-        } else if (persona === "Balanced Empath") {
-            advice = "You balance emotional understanding and practical support well.";
-        } else {
-            advice = "You prefer action over emotion. Consider listening without fixing right away.";
-        }
-
-        document.getElementById("results").innerText =
-            `Your Empathy Persona: ${persona}\n\nAdvice: ${advice}`;
+        resultBox.innerText = "Analyzing your empathy profile...";
+        const prompt = buildGeminiPrompt(responses);
+        const result = await getEmpathyPersonaFromGemini(prompt);
+        resultBox.innerText = result;
+        form.classList.add("hidden");
+        body.classList.add("h-screen");
     });
 });
