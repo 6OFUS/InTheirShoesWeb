@@ -1,5 +1,3 @@
-import { GEMINI_API_KEY } from './config.js';
-
 const questionsText = [
     "I try to understand how others feel in various situations.",
     "I often feel compassion when someone is upset.",
@@ -62,28 +60,25 @@ function buildGeminiPrompt(userRatings) {
         `.trim();
 }
 
-async function getEmpathyPersonaFromGemini(prompt) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+async function getEmpathyPersonaFromOpenAI(prompt) {
+    const url = "http://localhost:3000/api/prompt"; // your local backend
 
-    const body = {
-        contents: [{
-            parts: [{ text: prompt }]
-        }]
-    };
+    const body = { prompt };
 
     try {
         const res = await fetch(url, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers:{
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify(body)
         });
 
         const data = await res.json();
-
-        const output = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        const output = data?.message;
         return output || "Sorry, your empathy persona could not be determined. Please try again.";
     } catch (error) {
-        console.error("Gemini API Error:", error);
+        console.error("Backend API Error:", error);
         return "There was a problem analyzing your results. Please try again later.";
     }
 }
@@ -156,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         resultBox.innerText = "Analyzing your empathy profile...";
         const prompt = buildGeminiPrompt(responses);
-        const result = await getEmpathyPersonaFromGemini(prompt);
+        const result = await getEmpathyPersonaFromOpenAI(prompt);
         resultBox.innerText = result;
         form.classList.add("hidden");
         body.classList.add("h-screen");

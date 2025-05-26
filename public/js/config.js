@@ -18,3 +18,4 @@ export const emailJsKey = '_Rdb2Sc0PuoYwfjIg'
 
 // GEMINI
 export const GEMINI_API_KEY = "AIzaSyBH_iEDqQdkOCFIER5Vk79mWLTMP3UgfBQ";
+
