@@ -1,3 +1,5 @@
+import { OPENAI_API_KEY } from './config.js';
+
 const questionsText = [
   "I try to understand how others feel in various situations.",
   "I often feel compassion when someone is upset.",
@@ -50,16 +52,25 @@ function buildDualPrompt(cg, cr) {
   return `You are an empathy coaching assistant.\n\nTwo people completed the quiz: Caregiver and Care Recipient.\nEmpathy Personas:\n${personaList}\nCompare their profiles, identify each persona, highlight mismatches, and provide personalized advice for the caregiver. Also output two 5-element JSON arrays of trait scores [Compassion, Practicality, Reflection, Boundaries, Action] for each.\n\nCaregiver Answers:\n${cgAns}\n\nCare Recipient Answers:\n${crAns}`;
 }
 
-// Call backend API (ensure correct URL and port)
 async function callOpenAI(prompt) {
-  const res = await fetch('http://localhost:3000/api/prompt', {  // adjust host/port as needed
+  const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ prompt })
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${OPENAI_API_KEY}`
+    },
+    body: JSON.stringify({
+      model: 'gpt-4',
+      messages: [
+        { role: 'system', content: 'You are an empathy profiling assistant.' },
+        { role: 'user', content: prompt }
+      ],
+      temperature: 0.7
+    })
   });
   if (!res.ok) throw new Error(`API error: ${res.status}`);
   const json = await res.json();
-  return json.message;
+  return json.choices[0].message.content;
 }
 
 // Render Chart.js radar chart
@@ -75,8 +86,29 @@ function renderComparisonChart(cgScores, crScores) {
       ]
     },
     options: {
-      responsive: true,
-      scales: { r: { min: 0, max: 5, ticks: { stepSize: 1 } } }
+        responsive: true,
+        scales: {
+            r: {
+            min: 0,
+            max: 15, // increase this based on highest score
+            ticks: {
+                stepSize: 1
+            },
+            pointLabels: {
+                font: {
+                size: 14
+                }
+            }
+            }
+        },
+        plugins: {
+            legend: {
+            position: 'top',
+            },
+            title: {
+            display: false,
+            }
+        }
     }
   });
 }
